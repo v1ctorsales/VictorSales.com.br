@@ -1,9 +1,4 @@
 /*
-=====================================================================
-*   Ceevee v1.0 Default Stylesheet
-*   url: styleshout.com
-*   03-17-2014
-=====================================================================
 
 TOC:
 a. Webfonts and Icon fonts
@@ -113,10 +108,52 @@ abbr[title], dfn[title] {
    cursor: help;
 }
 
-table {
-   border-collapse: collapse;
-   border-spacing: 0;
+.container{
+   width: 20%;
+   background-color: rgb(37, 37, 37);
+   border-radius: 25px;
+   width: 250px;
+   position: relative;
+   justify-content:flex-start;
+   display: inline-block;
 }
+
+.containercima{
+   padding-top: 20px;
+   display: block;
+}
+.containerbaixo{
+   padding-top: 20px;
+   width: 250px;
+   height: 390px;
+   float: left;
+}
+
+
+#icon{
+   width: 20%;
+   margin: auto;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+
+table {
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+   display: inline-block;
+ }
+ 
+ td, th {
+   border: .01px solid #dddddd6c;
+   text-align: left;
+   padding: 8px;
+ }
+ 
+ tr:nth-child(even) {
+   background-color: #2e2e2e;
+ }
 
 
 /* ------------------------------------------------------------------ */
