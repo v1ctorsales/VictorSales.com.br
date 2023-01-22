@@ -109,13 +109,12 @@ abbr[title], dfn[title] {
 }
 
 .container{
-   width: 20%;
-   background-color: rgb(37, 37, 37);
+   width: 100%;
    border-radius: 25px;
-   width: 250px;
    position: relative;
-   justify-content:flex-start;
+   justify-content:center;
    display: inline-block;
+
 }
 
 .containercima{
@@ -126,8 +125,13 @@ abbr[title], dfn[title] {
    padding-top: 20px;
    width: 250px;
    height: 390px;
+   float: left;
+   width: 33%;
+   padding: 5px;
 }
-
+* {
+   box-sizing: border-box;
+ }
 
 #icon{
    width: 20%;
@@ -141,8 +145,8 @@ table {
    font-family: arial, sans-serif;
    border-collapse: collapse;
    width: 100%;
-   display: inline-block;
  }
+ 
  
  td, th {
    border: .01px solid #dddddd6c;
