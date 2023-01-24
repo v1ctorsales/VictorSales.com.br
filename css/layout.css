@@ -137,7 +137,8 @@ header .scrolldown a:hover { color: #f0c400; }
    left: 0;
    top: 0;
 }
-.opaque { background-color: #333; }
+.opaque { background-color: #434357; 
+}
 
 /* hide toggle button */
 #nav-wrap > a.mobile-btn { display: none; }
@@ -241,8 +242,8 @@ ul#nav li.current a { color: #f0c400; }
    background: #444;
 }
 #about .download .button:hover {
-   background: #fff;
-   color: #2B2B2B;
+   background: rgb(21, 21, 24);
+   color: rgb(251, 252, 235);
 }
 #about .download .button i {
    margin-right: 15px;
