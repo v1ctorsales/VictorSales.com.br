@@ -221,7 +221,7 @@ h5 { font-size: 18px; line-height: 30px; }
 h6 { font-size: 14px; line-height: 30px; }
 .subheader { }
 
-p { margin: 0 0 30px 0; }
+p { margin: 0 0 80px 0; }
 p img { margin: 0; }
 p.lead {
    font: 19px/36px 'opensans-light', sans-serif;
@@ -513,8 +513,8 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-   font: 16px/30px 'opensans-bold', sans-serif;
-   background: #11ABB0;
+   font: 18px/30px 'opensans-bold', sans-serif;
+   background: #4769b3;
    display: inline-block;
 	text-decoration: none;
    letter-spacing: 0;
@@ -524,6 +524,11 @@ input[type="button"] {
    border: none;
    cursor: pointer;
    height: auto;
+   width: 68%;
+   text-align: center;
+
+   margin-left:11%;
+   display: inline-flex;
 
    -webkit-transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
@@ -542,7 +547,7 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-   background: #3d4145;
+   background: #2e465f;
    color: #fff;
 }
 
@@ -663,16 +668,20 @@ input[type="checkbox"] { display: inline; }
 .row:after {
     clear: both;
 }
-
 .column, .columns {
    position: relative;
    padding: 0 3px;
    min-height: 1px;
    float: left;
+   flex-direction:column;
+   display: block;
 }
 .column.centered, .columns.centered  {
     float: none;
     margin: 0 auto;
+}
+.fa-download{
+   margin: 8px;
 }
 
 /* removed gutters */

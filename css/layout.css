@@ -218,7 +218,7 @@ ul#nav li.current a { color: #f0c400; }
 
 #about h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
-   color: #fff;
+   color: rgb(247, 250, 219);
    text-transform: uppercase;
    margin-bottom: 12px;
 }
@@ -230,10 +230,11 @@ ul#nav li.current a { color: #f0c400; }
    position: relative;
    height: 220px;
    border-radius: 100%;
+   margin-bottom: 20px;
 }
 #about .contact-details { width: 41.66667%; }
 #about .download {
-   width: 98.33333%;
+   width: 100%;
    padding-top: 6px;
 }
 #about .main-col { padding-right: 5%; }
@@ -1042,11 +1043,13 @@ footer .social-links li:first-child { margin-left: 0; }
 
 .icontest
 {
-   width:8%;
+   width:15%;
+   display: inline-block;
+   margin-left: 10px;
 }
 
 .icontest:hover{
-   width: 8.5%;
+   width: 15%;
 }
 
 
