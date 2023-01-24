@@ -52,7 +52,7 @@ header:before {
 header .banner {
    display: inline-block;
    vertical-align: middle;
-   margin: 0 auto;
+   margin-bottom: 250px;
    width: 85%;
    padding-bottom: 30px;
    text-align: center;

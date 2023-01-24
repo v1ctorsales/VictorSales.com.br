@@ -921,7 +921,10 @@ section ul li.active
 .mo-fire {
    height: auto;
    position: absolute;
-   left:27.8%;
+left: 50%;
+-webkit-transform: translateX(-50%);
+-ms-transform: translateX(-50%);
+transform: translateX(-45%);
    bottom: -50px;
    z-index: 4;
  }
