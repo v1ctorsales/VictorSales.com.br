@@ -761,6 +761,12 @@ e. Others
  
  /* smaller screens
  --------------------------------------------------------------- */
+ @media only screen and (max-width: 999px) {
+   .button{
+      padding: 12px 10px;
+   }
+ }
+
  @media only screen and (max-width: 900px) {
  
     /* block grids on small screens */
@@ -778,6 +784,10 @@ e. Others
  /* mobile wide/smaller tablets
  --------------------------------------------------------------- */
  @media only screen and (max-width: 767px) {
+
+   .button{
+      padding: 12px 10px;
+   }
  
     .row {
        width: 460px;
