@@ -49,7 +49,10 @@
    #about .profile-pic {
       width: 114px;
       height: 114px;
-      margin-left: 12px;
+      margin-left: 32px;
+   }
+   .holder a{
+padding: 2px;
    }
    #about .contact-details { width: 50%; }
    #about .download { width: 50%; }
@@ -120,6 +123,10 @@
       position: relative;
       top: 0px;
       right: 30px;
+   }
+
+   .holder a{
+      padding: 10px 68px;
    }
 
 	#nav-wrap > a:before,
