@@ -79,7 +79,7 @@
 
    $(window).on('scroll', function() {
 
-		var h = $('header').height();
+		var h = $('.sec').height();
 		var y = $(window).scrollTop();
       var nav = $('#nav-wrap');
 
@@ -87,7 +87,7 @@
 	      nav.fadeOut('fast');
 	   }
       else {
-         if (y < h*.20) {
+         if (y < h*.5) {
             nav.removeClass('opaque').fadeIn('fast');
          }
          else {
