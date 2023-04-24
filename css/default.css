@@ -82,7 +82,7 @@ e. Others
     word-wrap: break-word;
  }
  
- blockquote, q { quotes: &#8220 &#8220; }
+
  
  blockquote:before, blockquote:after,
  q:before, q:after {
@@ -871,9 +871,12 @@ h4, h5, h6 {
     text-align: center !important;
  }
  
+nav ul{
+   display: flex;
+}
+
  section ul
  {
- display: flex;
  justify-content: center;
  align-items: center;
  flex-wrap: wrap;
