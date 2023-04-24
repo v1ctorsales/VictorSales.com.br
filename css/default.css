@@ -877,11 +877,12 @@ nav ul{
 
  section ul
  {
-   display: flex;
+ display: flex;
  justify-content: center;
  align-items: center;
  flex-wrap: wrap;
  }
+ 
  section ul li
  {
     list-style: none;
