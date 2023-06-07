@@ -549,7 +549,7 @@ h4, h5, h6 {
  input[type="button"]:hover {
     background: #30113d;
     color: #fff!important;
-    border-radius: 10%;
+    border-radius: 9%;
  }
  
  .button:active,

@@ -1045,7 +1045,7 @@ footer .social-links li:first-child { margin-left: 0; }
 }
 
 .icontest:hover{
-   width: 15%;
+   color: #303030!important;
 }
 
 .containerbaixo{
