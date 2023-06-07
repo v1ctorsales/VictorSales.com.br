@@ -205,29 +205,28 @@ ul#nav li.current a { color: #f0c400; }
 /* ------------------------------------------------------------------ */
 
 #about {
-   background: #0d0d18;
-   padding-top: 96px;
-   padding-bottom: 66px;
+   background: #f3f3f3;
+   padding-top: 100px;
+   padding-bottom: 100px;
    overflow: hidden;
 }
 
-#about a, #about a:visited  { color: #fff; }
+#about a, #about a:visited  { color: #fff;     margin: 0; }
 #about a:hover, #about a:focus { color: #f0c400; }
 
 #about h2 {
    font: 22px/30px 'opensans-bold', sans-serif;
-   color:  rgb(252 253 248);
    text-transform: uppercase;
    margin-bottom: 12px;
 }
 #about p {
    line-height: 30px;
-   color: rgb(196, 193, 193);
+   color: rgb(85, 85, 85);
 }
 #about .profile-pic {
    position: relative;
    height: 220px;
-   border-radius: 100%;
+   border-radius: 22%;
    margin-bottom: 20px;
 }
 #about .contact-details { width: 41.66667%; }
@@ -1043,11 +1042,45 @@ footer .social-links li:first-child { margin-left: 0; }
 {
    width:15%;
    display: inline-block;
-   margin-left: 10px;
 }
 
 .icontest:hover{
    width: 15%;
 }
 
+.containerbaixo{
+   display: inline;
+   width: max-content;
+  /* border: 1px solid black; */
+   text-align: center;
+   max-width: 600px;
+   height: 100px;
+   margin: 50px 0 0 0 ;
+}
 
+.hastagcontainer{
+   background-color: #c2c2c2;
+   color: rgb(85, 85, 85);
+   width: max-content;
+   padding: 0 10px;
+   border-radius: 25px;
+   display: inline-block;
+   margin: 5px 0;
+}
+
+.hastagcontainer p{
+   display: inline;
+   margin: 0px;
+
+}
+
+.holdericones{
+margin: auto;
+display: block;
+text-align: center;
+gap: 5px;
+}
+.holder{
+   text-align: center;
+   margin: 10px 0 0 0;
+}

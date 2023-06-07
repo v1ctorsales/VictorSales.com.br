@@ -197,8 +197,8 @@ e. Others
     background: #fff;
     margin: 0px;
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
  
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
@@ -221,7 +221,7 @@ h4, h5, h6 {
  h6 { font-size: 14px; line-height: 30px; }
  .subheader { }
  
- p { margin: 0 0 80px 0; }
+ p { margin: 0 0 0 0; }
  p img { margin: 0; }
  p.lead {
     font: 19px/36px 'opensans-light', sans-serif;
@@ -514,17 +514,17 @@ h4, h5, h6 {
  input[type="reset"],
  input[type="button"] {
     font: 18px/30px 'opensans-bold', sans-serif;
-    background: #4769b3;
+    background: rgb(70, 39, 99);
     display: inline-block;
     text-decoration: none;
     letter-spacing: 0;
-    color: #fff;
+    color: #fff!important;
     padding: 12px 20px;
     margin-bottom: 18px;
     border: none;
     cursor: pointer;
     height: auto;
-    width: 68%;
+    width: max-content;
     text-align: center;
  
     margin-left:11%;
@@ -547,8 +547,9 @@ h4, h5, h6 {
  input[type="submit"]:hover,
  input[type="reset"]:hover,
  input[type="button"]:hover {
-    background: #2e465f;
-    color: #fff;
+    background: #30113d;
+    color: #fff!important;
+    border-radius: 10%;
  }
  
  .button:active,
@@ -556,8 +557,8 @@ h4, h5, h6 {
  input[type="submit"]:active,
  input[type="reset"]:active,
  input[type="button"]:active {
-    background: #3d4145;
-    color: #fff;
+   background: #30113d;
+   color: #fff!important;
  }
  
  .button.full-width,
@@ -1597,4 +1598,7 @@ font-weight: 400;
 }
 .waveAnimation .waveBottom {
    animation: move_wave 15s linear infinite;
+}
+.three{
+   text-align: center;
 }

@@ -46,16 +46,23 @@
 
    /* About Section
    ------------------------------------------------------------------- */
+   #about{
+      text-align: center;
+   }
+
    #about .profile-pic {
       width: 114px;
-      height: 114px;
-      margin-left: 32px;
-   }
+      height: 114px;   }
    .holder a{
 padding: 2px;
    }
    #about .contact-details { width: 50%; }
    #about .download { width: 50%; }
+
+   .containerbaixo{
+      max-width: 500px;
+      margin: 50px 0;
+   }
 
    /* Resume Section
    ------------------------------------------------------------------- */
@@ -364,6 +371,12 @@ padding: 2px;
    header .social { font-size: 20px;}
    header .social li { margin: 0 6px; }
 
+
+   .containerbaixo{
+      max-width: 450px;
+      margin: 50px 0;
+   }
+
    /* footer
    ------------------------------------------------------------------------ */
 
@@ -373,8 +386,21 @@ padding: 2px;
 
 }
 
+@media only screen and (max-width: 430px) {
 
+   .containerbaixo{
+      max-width: 400px;
+      margin: 50px 0;
+   }
+}
 
+@media only screen and (max-width: 400px) {
+
+   .containerbaixo{
+      max-width: 340px;
+      margin: 50px 0 80px 0;
+   }
+}
 
 
 
