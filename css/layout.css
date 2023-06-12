@@ -19,8 +19,6 @@
 /* a. General Styles
 /* ------------------------------------------------------------------ */
 
-body { background: #05050e; }
-
 /* ------------------------------------------------------------------ */
 /* b. Header Styles
 /* ------------------------------------------------------------------ */
@@ -228,7 +226,6 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1)
    position: relative;
    height: 220px;
    border-radius: 22%;
-   margin-bottom: 20px;
 }
 #about .contact-details { width: 41.66667%; }
 #about .download {
@@ -430,13 +427,14 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1)
 /* ------------------------------------------------------------------ */
 
 #portfolio {
-   background-color: #060612;
+   background: rgb(249,249,249);
+   background: linear-gradient(180deg, rgba(249,249,249,1) 0%, rgba(240,240,240,1) 100%);
    padding-top: 90px;
    padding-bottom: 60px;
 }
 #portfolio h1 {
-   font: 22px/30px 'opensans-bold', sans-serif;
-   color: #fff;
+   font-size: 22px;
+   color: #353535;
    text-transform: uppercase;
    margin-bottom: 12px;
    text-align: center;
@@ -810,20 +808,20 @@ call-to-action .button {
 /* ------------------------------------------------------------------ */
 
 #contact {
-   background: #0d0d18;
+   background: rgba(240,240,240,1);
    padding-top: 96px;
 }
 #contact .section-head { margin-bottom: 42px; }
 
-#contact a, #contact a:visited  { color: #cacaca; }
-#contact a:hover, #contact a:focus { color: #f0c400; }
+#contact a, #contact a:visited  { color: #86377b; }
+#contact a:hover, #contact a:focus { color: #471441; }
 
 #contact h1 {
-   font: 22px/24px 'opensans-bold', sans-serif;
+   font-size: 22px;
    text-transform: uppercase;
    text-align: center;
    letter-spacing: 3px;
-   color: #EBEEEE;
+   color: #6e6e6e;
    margin-bottom: 6px;
 }
 #contact h1 span { display: none; }
@@ -952,8 +950,8 @@ footer {
    position: relative;
 }
 
-footer a, footer a:visited { color: #ffffff; }
-footer a:hover, footer a:focus { color: #f0c400; }
+footer a, footer a:visited { color: #474747; }
+footer a:hover, footer a:focus { color: #86377b; }
 
 /* copyright */
 footer .copyright {
@@ -965,6 +963,7 @@ footer .copyright li {
     margin: 0;
     padding: 0;
     line-height: 24px;
+    color: #1F1F1F;
 }
 .ie footer .copyright li {
    display: inline;
@@ -973,7 +972,7 @@ footer .copyright li:before {
     content: "\2022";
     padding-left: 10px;
     padding-right: 10px;
-    color: #095153;
+    color: #86377b;
 }
 footer .copyright  li:first-child:before {
     display: none;
@@ -1008,7 +1007,7 @@ footer .social-links li:first-child { margin-left: 0; }
 	display: block;
 	width: 60px;
 	height: 60px;
-	background-color: #06061d;
+	background-color: #434357;
 
 	-webkit-transition: all 0.2s ease-in-out;
    -moz-transition: all 0.2s ease-in-out;
@@ -1021,7 +1020,7 @@ footer .social-links li:first-child { margin-left: 0; }
    line-height: 60px;
  	border-radius: 100%;
 }
-#go-top a:hover { background-color: #f0c400; }
+#go-top a:hover { background-color: #86377b; }
 
 .portfolio-item .item-wrap.hide{
    display: none;
