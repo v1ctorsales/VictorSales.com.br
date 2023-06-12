@@ -241,6 +241,8 @@ background-color: rgba(249,249,249,1) ;
  }
  
  body {
+   padding: 0;
+   border: 0;
     margin: 0px;
     height: 100%;
     font-family: 'Roboto', sans-serif;
@@ -1600,7 +1602,6 @@ font-weight: 400;
    width: 100%;
    overflow: hidden;
    height: 100%;
-   bottom: -1px;
    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
 }
 .bgTop {
