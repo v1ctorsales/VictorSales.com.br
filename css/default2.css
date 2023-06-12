@@ -81,6 +81,40 @@ e. Others
     white-space: pre-wrap;
     word-wrap: break-word;
  }
+
+ .dots{
+margin: -20px 0 40px 0;
+display:grid;
+gap: 10px;
+ }
+
+.dot {
+   width: 5px;
+   border-radius: 50%;
+   background-color: rgb(182, 182, 182);
+   height: 5px;
+   text-align: center;
+   display: block;
+   margin: auto;
+ }
+ .dot2 {
+   width: 10px;
+   border-radius: 50%;
+   background-color: rgb(182, 182, 182);
+   height: 10px;
+   text-align: center;
+   display: block;
+   margin: auto;
+ }
+ .dot3 {
+   width: 15px;
+   border-radius: 50%;
+   background-color: rgb(182, 182, 182);
+   height: 15px;
+   text-align: center;
+   display: block;
+   margin: auto;
+ }
  
 
  
@@ -339,7 +373,7 @@ h4, h5, h6 {
     text-decoration: none;
     outline: 0;
     color: #f0c400;
- 
+    margin-top: 200px;
     -webkit-transition: color .3s ease-in-out;
     -moz-transition: color .3s ease-in-out;
     -o-transition: color .3s ease-in-out;
@@ -514,7 +548,8 @@ h4, h5, h6 {
  input[type="reset"],
  input[type="button"] {
     font: 18px/30px 'opensans-bold', sans-serif;
-    background: rgb(70, 39, 99);
+    background-color:#86377b;
+    
     display: inline-block;
     text-decoration: none;
     letter-spacing: 0;
@@ -549,7 +584,7 @@ h4, h5, h6 {
  input[type="button"]:hover {
     background: #30113d;
     color: #fff!important;
-    border-radius: 9%;
+    border-radius: 6%;
  }
  
  .button:active,
@@ -1520,7 +1555,6 @@ font-weight: 400;
 }
 
 .cliqueaqui{
-   margin-top: 200px;   
    color: white;
 }
 
@@ -1601,4 +1635,16 @@ font-weight: 400;
 }
 .three{
    text-align: center;
+}
+
+.hashtagitem{
+   display: none;
+}
+
+.on{
+   display: block;
+}
+
+.ativo{
+   background-color: rgb(160, 160, 160)!important;
 }
