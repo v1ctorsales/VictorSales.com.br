@@ -223,6 +223,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1)
    line-height: 30px;
    color: rgb(85, 85, 85);
 }
+
 #about .profile-pic {
    position: relative;
    height: 220px;

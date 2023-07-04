@@ -346,6 +346,29 @@ padding: 2px;
 
 }
 
+@media only screen and (max-width: 600px) {
+
+   .titulo{
+      display: none;
+   }
+   .titulomob{
+      display: block;
+   }
+   .sec.home{
+      height: 100vh;
+   }
+   .smoke-container{
+      display: none;
+   }
+   .container2{
+      display: none;
+   }
+   .hastagcontainer{
+      font: 18px/30px 'opensans-bold', sans-serif;
+   }
+
+}
+
 /* mobile narrow
   -------------------------------------------------------------------------- */
 

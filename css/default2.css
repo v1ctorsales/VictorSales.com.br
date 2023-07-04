@@ -1549,6 +1549,12 @@ font-weight: 400;
    display: block;
 }
 
+.titulomob{
+   padding-top: 15%;
+   text-align: center;
+   display: none;
+}
+
 .inline{
    display:inline-flex;
 }
@@ -1659,8 +1665,20 @@ font-weight: 400;
 }
 
 .ativo{
-   background-color: rgb(160, 160, 160)!important;
+   background-color: #86377b!important;
+}
+
+.ativo .hashtagtext{
+   color: rgb(245, 245, 245)!important;
 }
 .hashtagtext{
    cursor: pointer;
+}
+
+.span2{
+   color: #86377b;
+}
+
+.off{
+   display: none;
 }
