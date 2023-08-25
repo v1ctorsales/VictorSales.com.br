@@ -1682,3 +1682,35 @@ font-weight: 400;
 .off{
    display: none;
 }
+
+.toppers{
+   
+}
+.topper{
+width: 48%;
+display: block;
+}
+
+.topimg{
+   width: 20rem!important;
+   display: inline;
+   margin-right: 1rem;
+}
+
+.textotop{
+   color: rgb(85, 85, 85);
+   display: inline;
+   height: 100%;
+}
+
+.toptitle{
+font-weight: bold;
+margin-left: 50%;
+margin-bottom: 1rem;
+margin-top: .5rem;
+}
+
+.mycont{
+   display: block;
+   vertical-align: text-bottom;
+}
