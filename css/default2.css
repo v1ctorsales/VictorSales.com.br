@@ -1684,11 +1684,16 @@ font-weight: 400;
 }
 
 .toppers{
-   
+   display: grid;
+   width: inherit;
+   grid-row: auto auto;
+   grid-template-columns: 50% 50%;
+   grid-row-gap: 10px;
 }
 .topper{
-width: 48%;
 display: block;
+align-items:center;
+justify-content:center;
 }
 
 .topimg{
@@ -1705,12 +1710,17 @@ display: block;
 
 .toptitle{
 font-weight: bold;
-margin-left: 50%;
-margin-bottom: 1rem;
+font-size: 22px;
+margin-bottom: 2rem;
 margin-top: .5rem;
 }
 
 .mycont{
    display: block;
    vertical-align: text-bottom;
+   margin-top: 2rem;
+}
+
+.social li a i:hover{
+   box-shadow: 0 8px 6px -6px black;
 }
