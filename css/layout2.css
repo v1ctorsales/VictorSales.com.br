@@ -526,12 +526,12 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1)
 }
 
 /* on hover */
-.portfolio-item:hover .overlay {
+.item-wrap:hover .overlay {
 	opacity: 1;
 	-moz-opacity: 1;
 	filter:alpha(opacity=100);
 }
-.portfolio-item:hover .link-icon {
+.item-wrap:hover .link-icon {
    opacity: 1;
 	-moz-opacity: 1;
 	filter:alpha(opacity=100);
@@ -1086,3 +1086,4 @@ gap: 5px;
    text-align: center;
    margin: 10px 0 0 0;
 }
+   
