@@ -106,6 +106,9 @@ padding: 2px;
 
    /* mobile navigation
    -------------------------------------------------------------------- */
+   .textotop{
+      display: none;
+   }
    #nav-wrap {
       font: 12px 'opensans-bold', sans-serif;
       background: transparent !important;
