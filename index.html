@@ -32,6 +32,10 @@ if($target.length>0){
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=VT323&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=REM:wght@200&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 
    <!-- Script
    ================================================== -->
@@ -57,10 +61,13 @@ if($target.length>0){
 	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
          <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li class="current"><a class="smoothscroll" href="#home"><i class="fa-solid fa-house"></i></a></li>
             <li><a class="smoothscroll" href="#about">Sobre</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Portifólio</a></li>
+            <li><a class="smoothscroll" href="#portfolio">Projetos</a></li>
             <li><a class="smoothscroll" href="#contact">Contato</a></li>
+            <li><a class="smoothscroll" href="#a"><i class="fa-solid fa-gear"></i></a></li>
+            
+
 
             
          </ul> <!-- fim #nav -->
@@ -69,34 +76,18 @@ if($target.length>0){
       </nav> <!-- fim #nav-wrap -->
       
 
+         <div class="pagInicial lineupanim">
+            <div class="titulo ">
+               <div class="inline"><h3 class="mechamo">Olá, me chamo  <span class="2">Victor</span></h3></div>
+               <br>
+                <div class="inline"><h3 class="mechamo"> E sou um <span class="2">desenvolvedor</span></h3></div>
+              </div>
+              <div class="imgTitulo">
+               <img src="https://cdn.dribbble.com/users/330915/screenshots/3587000/10_coding_dribbble.gif" alt="" srcset="">
+              </div>
+         </div>
+         <ul class="cliqueaquiUl"><a class="smoothscroll" href="#about"><h3 class="cliqueaqui"><i class="fa-solid fa-circle-plus fa-2xl"></i></h3></a></ul>
 
-         <div class="waveWrapper waveAnimation">
-             <div class="waveWrapperInner bgTop">
-               <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
-             </div>
-             <div class="waveWrapperInner bgMiddle">
-               <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
-             </div>
-             <div class="waveWrapperInner bgBottom">
-               <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
-             </div>
-           </div>
-   
-           <div class="titulo">
-             <h3>Bem vindo ao meu site,</h3>
-             <div class="inline"><h3 class="mechamo">Me chamo <h1 class="victor">Victor</h1></h3><h3 class="mechamo"> e sou um <span class="2">desenvolvedor.</span></h3></div>
-             <ul><a class="smoothscroll" href="#about"><h3 class="cliqueaqui"><i class="fa-solid fa-chevron-down"></i></h3></a></ul>
-           </div>
-
-           <div class="titulomob">
-            <br><br> <br><br> <br><br>
-            <h3>Bem vindo ao meu site.</h3>
-            <br><br>
-            <div class="inline"><h3 class="mechamo">Me chamo </h3><h1 class="victor">Victor</h1></div>
-            <br><br>
-            <h3 class="mechamo"> e sou um <span class="2">desenvolvedor.</span></h3>
-            <ul><a class="smoothscroll" href="#about"><h3 class="cliqueaqui"><i class="fa-solid fa-chevron-down"></i></h3></a></ul>
-           </div>
 
 
    </section> <!-- Header Fim -->
@@ -113,7 +104,7 @@ if($target.length>0){
 
             <h2 class="hastagcontainer">#A PESSOA</h2>
 
-            <p>Prazer, me chamo Victor! Sou mineiro nascido, criado e pagador de IPTU em Belo Hoizonte. O termo "fanático" é pouco para descrever meu amor pelo Cruzeiro!
+            <p class="lineUp">Prazer, me chamo Victor! Sou mineiro nascido, criado e pagador de IPTU em Belo Hoizonte. O termo "fanático" é pouco para descrever meu amor pelo Cruzeiro!
                Tenho paixão também por jogos, filmes e boa música. Formarei como Bacharel em Sistemas de Informação na Faculdade Pitágoras em julho de 2025. Bora jogar um xadrez?
             </p>
             
@@ -1012,6 +1003,16 @@ if($target.length>0){
 
          })
       }
+
+      document.addEventListener("DOMContentLoaded", function() {
+         var elemento = document.querySelector(".lineupanim");
+         elemento.classList.add("lineUp");
+
+         // Remover a classe após a animação ter sido executada
+         elemento.addEventListener("animationend", function() {
+            elemento.classList.remove("lineUp");
+         });
+      });
 
       let hastagcontainer = document.querySelectorAll('.hastagcontainer')
       let hashtagitem = document.querySelectorAll('.hashtagitem')

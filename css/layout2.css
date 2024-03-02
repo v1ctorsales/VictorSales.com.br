@@ -118,11 +118,11 @@ header .scrolldown a:hover { color: #f0c400; }
 	 padding: 0;
 	 border: none;
 	 outline: none;
+    background-color: white;
 }
 
 /* nav-wrap */
 #nav-wrap {
-   font: 12px 'opensans-bold', sans-serif;
    width: 100%;
    text-transform: uppercase;
    letter-spacing: 2.5px;
@@ -132,7 +132,7 @@ header .scrolldown a:hover { color: #f0c400; }
    left: 0;
    top: 0;
 }
-.opaque { background-color: #434357; 
+.opaque { background-color: white; 
 }
 
 /* hide toggle button */
@@ -150,7 +150,6 @@ ul#nav li {
    list-style: none;
    height: 48px;
    display: inline-block;
-   font-family: 'Montserrat', sans-serif;
 }
 
 /* Links */
@@ -159,13 +158,13 @@ ul#nav li a {
 /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
 
    display: inline-block;
-   font-size: 13px;
+   font-size: 16px;
    padding: 8px 13px;
    line-height: 32px;
 	text-decoration: none;
    text-align: left;
-   color: #fff;
-   text-shadow: 1.5px 1.5px 1.5px rgb(14, 14, 14);
+   color: #6c00ff;
+   font-weight: 800;
 
 	-webkit-transition: color .2s ease-in-out;
 	-moz-transition: color .2s ease-in-out;
@@ -179,13 +178,11 @@ ul#nav li a:hover {
    /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
    
       display: inline-block;
-      font-size: 13.1px;
       padding: 8px 13px;
       line-height: 32px;
       text-decoration: none;
       text-align: left;
-      color: rgb(219, 219, 219);
-   
+      color: #b887fc;
       -webkit-transition: color .2s ease-in-out;
       -moz-transition: color .2s ease-in-out;
       -o-transition: color .2s ease-in-out;
@@ -195,7 +192,7 @@ ul#nav li a:hover {
    
 
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #f0c400; }
+ul#nav li.current a { color: #b887fc; }
 
 
 /* ------------------------------------------------------------------ */
@@ -1085,5 +1082,9 @@ gap: 5px;
 .holder{
    text-align: center;
    margin: 10px 0 0 0;
+}
+
+.pagInicial{
+   display: grid;
 }
    
