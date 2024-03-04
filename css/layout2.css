@@ -137,7 +137,7 @@ header .scrolldown a:hover { color: #f0c400; }
 
 .tecnologias{
    margin-top: 0;
-   width: 100%;
+   width: 96%;
    height: 50px;
    border: 1px dotted rgb(219, 219, 219);
    padding: 5px;
@@ -197,18 +197,7 @@ ul#nav li a {
 ul#nav li a:hover {
 
    /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
-   
-      display: inline-block;
-      padding: 8px 13px;
-      line-height: 32px;
-      text-decoration: none;
-      text-align: left;
-      color: #b887fc;
-      -webkit-transition: color .2s ease-in-out;
-      -moz-transition: color .2s ease-in-out;
-      -o-transition: color .2s ease-in-out;
-      -ms-transition: color .2s ease-in-out;
-      transition: color .2s ease-in-out;
+
    }
    
 
@@ -1122,5 +1111,6 @@ gap: 5px;
 
 .pagInicial{
    display: grid;
+   grid-template-columns: 55% 45%;
 }
    

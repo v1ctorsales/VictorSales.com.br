@@ -551,6 +551,7 @@ h4, h5, h6 {
  img {
     max-width: 100%;
     height: auto;
+    
  }
  img.pull-right { margin: 12px 0px 0px 18px; }
  img.pull-left { margin: 12px 18px 0px 0px; }
@@ -1576,6 +1577,7 @@ font-weight: bold;
 }
 
 .imgTitulo{
+   margin: 10% 10% 0 0px;
    grid-row: 1;
    width: 60%;
    margin-left: 25%;

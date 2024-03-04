@@ -2,7 +2,21 @@
 
 
 /* ================================================================== */
+@media only screen and (max-width: 1400px) {
+   .mechamo{
+      font-size: 40px;
+   }
+   .pagInicial{
+      grid-template-columns: 65% 35%;
 
+   }
+   .imgTitulo{
+      margin-top: 20%;
+   }
+   .cliqueaquiUl{
+      margin-top: 20%;
+   }
+}
 
 /* screenwidth less than 1024px
 --------------------------------------------------------------------- */
@@ -15,12 +29,30 @@
       letter-spacing: -1px;
       margin: 0 auto 12px auto;
    }
+   .mechamo{
+      font-size: 32px!important;
+   }
+   .imgTitulo{
+      margin-top: 30%;
+   }
 
 }
+
 
 /* screenwidth less than 900px
 --------------------------------------------------------------------- */
 @media only screen and (max-width: 900px) {
+
+   .pagInicial{
+      display: block;
+   }
+   .imgTitulo{
+      width: 30%;
+      margin: 10% auto auto auto;
+   }
+   .cliqueaquiUl{
+      margin-top: 5%;
+   }
 
     /* header styles
    ------------------------------------------------------------------ */
@@ -106,6 +138,9 @@ padding: 2px;
 
    /* mobile navigation
    -------------------------------------------------------------------- */
+   .titulo {
+      margin: auto;
+   }
    .liTecnologia{
       width: 8%;
    }
@@ -175,7 +210,6 @@ padding: 2px;
 	#nav-wrap:target > ul#nav	{
 	   display: block;
       padding: 30px 20px 48px 20px;
-      background: #434357;;
       margin: 0 30px;
       clear: both;
    }
@@ -354,8 +388,15 @@ padding: 2px;
 
 @media only screen and (max-width: 600px) {
 
-   .titulo{
-      display: none;
+   .toppers{
+      margin-left: -20px;
+   }
+
+   .mechamo{
+font-size: 28px!important;
+   }
+   .imgTitulo{
+      margin-top: 30%!important;
    }
    .titulomob{
       display: block;
@@ -373,12 +414,22 @@ padding: 2px;
       font: 18px/30px 'opensans-bold', sans-serif;
    }
 
+
 }
 
 /* mobile narrow
   -------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 480px) {
+
+   
+   .mechamo{
+      font-size: 22px!important;
+         }
+         .imgTitulo{
+            width: 50%;
+            margin-top: 30%!important;
+         }
 
    /* mobile navigation
    -------------------------------------------------------------------- */
