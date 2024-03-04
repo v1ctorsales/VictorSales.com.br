@@ -135,8 +135,28 @@ header .scrolldown a:hover { color: #f0c400; }
 .opaque { background-color: white; 
 }
 
+.tecnologias{
+   width: 100%;
+   height: 50px;
+   border: 1px solid rgb(219, 219, 219);
+   border-radius: 10px;
+   justify-content: space-around;
+}
+
+.liTecnologia{
+   width: 5%;
+   margin: 0;
+   padding: 0;
+}
+
+.imgTecnologia{
+   align-items: center;
+   vertical-align:middle;
+   margin: auto;
+}
+
 /* hide toggle button */
-#nav-wrap > a.mobile-btn { display: none; }
+#nav-wrap > a.mobile-btn { display: none; background-color: #6c00ff; }
 
 ul#nav {
    min-height: 48px;
@@ -200,8 +220,8 @@ ul#nav li.current a { color: #b887fc; }
 /* ------------------------------------------------------------------ */
 
 #about {
-   background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1) 100%);
+   /*background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1) 100%);*/
    padding-top: 100px;
    padding-bottom: 100px;
    overflow: hidden;
@@ -211,10 +231,12 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1)
 #about a, #about a:visited  { color: #fff;     margin: 0; }
 #about a:hover, #about a:focus { color: #f0c400; }
 
-#about h2 {
-   font: 22px/30px 'opensans-bold', sans-serif;
+.newH2 {
+   margin-bottom: 80px;
    text-transform: uppercase;
-   margin-bottom: 12px;
+   font-size: 32px;
+   color: #6c00ff;
+   text-align: center;
 }
 #about p {
    line-height: 30px;
@@ -245,6 +267,9 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1)
    font-size: 20px;
 }
 
+.nine .columns .main-col{
+padding-left: 50px;
+}
 
 /* ------------------------------------------------------------------ */
 /* d. Resume Section
@@ -426,8 +451,8 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1)
 /* ------------------------------------------------------------------ */
 
 #portfolio {
-   background: rgb(249,249,249);
-   background: linear-gradient(180deg, rgba(249,249,249,1) 0%, rgba(240,240,240,1) 100%);
+   /*background: rgb(249,249,249);
+   background: linear-gradient(180deg, rgba(249,249,249,1) 0%, rgba(240,240,240,1) 100%);*/
    padding-top: 90px;
    padding-bottom: 60px;
 }
@@ -807,13 +832,13 @@ call-to-action .button {
 /* ------------------------------------------------------------------ */
 
 #contact {
-   background: rgba(240,240,240,1);
+
    padding-top: 96px;
 }
 #contact .section-head { margin-bottom: 42px; }
 
-#contact a, #contact a:visited  { color: #86377b; }
-#contact a:hover, #contact a:focus { color: #471441; }
+#contact a, #contact a:visited  { color: rgb(108, 0, 255); }
+#contact a:hover, #contact a:hover { color: #b887fc; }
 
 #contact h1 {
    font-size: 22px;
@@ -995,10 +1020,8 @@ footer .social-links li:first-child { margin-left: 0; }
 
 /* Go To Top Button */
 #go-top {
-	position: absolute;
-	top: -24px;
-   left: 50%;
-   margin-left: -30px;
+margin-left: auto;
+text-align: center;
 }
 #go-top a {
 	text-decoration: none;
@@ -1006,7 +1029,10 @@ footer .social-links li:first-child { margin-left: 0; }
 	display: block;
 	width: 60px;
 	height: 60px;
-	background-color: #434357;
+	background-color: rgb(108, 0, 255);
+   margin: auto;
+   margin-bottom: 20px;
+
 
 	-webkit-transition: all 0.2s ease-in-out;
    -moz-transition: all 0.2s ease-in-out;
@@ -1075,6 +1101,7 @@ footer .social-links li:first-child { margin-left: 0; }
 
 .holdericones{
 margin: auto;
+margin-top: 15px;
 display: block;
 text-align: center;
 gap: 5px;

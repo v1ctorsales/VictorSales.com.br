@@ -91,13 +91,12 @@ justify-content: space-between;
 margin: -0px 0 0px 0;
 display:grid;
 gap: 10px;
-background-color: rgba(249,249,249,1) ;
  }
  .dots2 {
    padding: 70px 0 0px 0;
    display:grid;
    gap: 10px;
-   background-color: rgba(240,240,240,1);
+
     }
 
 .dot {
@@ -249,8 +248,7 @@ background-color: rgba(249,249,249,1) ;
     font-weight: 400;
     font-style: normal;
     color: rgb(255, 255, 255);
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 62%, rgba(240,240,240,1) 63%);
+    
  
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
@@ -566,7 +564,7 @@ h4, h5, h6 {
  input[type="reset"],
  input[type="button"] {
     font: 18px/30px 'opensans-bold', sans-serif;
-    background-color:#86377b;
+    background-color:#6c00ff;
     
     display: inline-block;
     text-decoration: none;
@@ -600,7 +598,7 @@ h4, h5, h6 {
  input[type="submit"]:hover,
  input[type="reset"]:hover,
  input[type="button"]:hover {
-    background: #30113d;
+    background: #b887fc;
     color: #fff!important;
     border-radius: 6%;
  }
@@ -702,10 +700,12 @@ h4, h5, h6 {
  /* default
  --------------------------------------------------------------- */
  .row {
-    width: 96%;
-    max-width: 1020px;
+    max-width: 1200px;
     margin: 0 auto;
-    margin-top: 25px;
+ }
+
+ ._controle{
+   margin-top: 30px;
  }
  /* fixed width for IE8 */
  .ie .row { width: 1000px ; }
@@ -945,7 +945,7 @@ nav ul{
     padding: 12px 12px;
     cursor: pointer;
     color: rgb(110, 110, 110);
-    font-size: 16px;
+    font-size: 20px;
     z-index: 9;
     
  }
@@ -953,7 +953,6 @@ nav ul{
  section ul li:hover
  {
     list-style: none;
-    padding: 12px 12px;
     cursor: pointer;
     color: rgb(61, 61, 61);
  }
@@ -1544,9 +1543,20 @@ ul li{
    list-style-type: none;
 }
 
+.smDesc{
+   color: rgb(187, 187, 187)!important;
+   font-size: 14px;
+   font-style: italic;
+}
+
 span{
 color: #6c00ff;
 font-weight: 400;
+}
+
+.spanBold{
+   color: #000000;
+font-weight: bold;
 }
 
 .pagInicial{
@@ -1620,7 +1630,6 @@ font-weight: 400;
 
 .cliqueaqui:hover{
    color: #8630ff;
-   font-size: 35px;
    transition: 0.70s;
    -webkit-transition: 0.70s;
    -moz-transition: 0.70s;
@@ -1660,7 +1669,7 @@ font-weight: 400;
    width: 100%;
    overflow: hidden;
    height: 100%;
-   background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+   background-image: linear-gradient(to top, #6c00ff 20%, #27273c 80%);
 }
 .bgTop {
    z-index: 15;
@@ -1716,7 +1725,7 @@ font-weight: 400;
 }
 
 .ativo{
-   background-color: #86377b!important;
+   background-color: #6c00ff!important;
 }
 
 .ativo .hashtagtext{
@@ -1727,7 +1736,7 @@ font-weight: 400;
 }
 
 .span2{
-   color: #86377b;
+   color: #6c00ff;
 }
 
 .off{
@@ -1786,7 +1795,7 @@ font-style: italic;
 }
 
 .botagoGithub{
-   color: #252542!important;
+   color: #6c00ff!important;
    margin: 0;
    padding: 0;
    text-align: center;
@@ -1794,16 +1803,16 @@ font-style: italic;
 
 .botagoGithub:hover
 {
-   color: #86377b!important;
+   color: #b887fc!important;
    cursor: pointer;
 }
 
 .btn-producao{
    cursor: pointer;
    margin: 0;
-   color: #252542!important;
+   color: #6c00ff!important;
 }
 
 .btn-producao:hover{
-   color: #86377b!important;
+   color: #b887fc!important;
 }

@@ -106,6 +106,9 @@ padding: 2px;
 
    /* mobile navigation
    -------------------------------------------------------------------- */
+   .liTecnologia{
+      width: 8%;
+   }
    .textotop{
       display: none;
    }
