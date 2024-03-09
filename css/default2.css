@@ -1818,3 +1818,17 @@ font-style: italic;
 .btn-producao:hover{
    color: #b887fc!important;
 }
+
+::-webkit-scrollbar{
+   width: 15px;
+}
+
+::-webkit-scrollbar-track{
+   background-color: rgb(245, 245, 245);
+}
+
+::-webkit-scrollbar-thumb{
+
+   background-color: #6c00ff;
+   border-radius: 99px 0 0 99px ;
+}
