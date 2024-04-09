@@ -65,7 +65,7 @@ if($target.length>0){
             <li><a class="smoothscroll" href="#about">Sobre</a></li>
             <li><a class="smoothscroll" href="#portfolio">Projetos</a></li>
             <li><a class="smoothscroll" href="#contact">Contato</a></li>
-            <li><a class="smoothscroll" href="#a"><i class="fa-solid fa-gear"></i></a></li>
+            <li><a class="smoothscroll" href="javascript:;" onclick="abrirModal();"><i class="fa-solid fa-gear"></i></a></li>
             
 
 
@@ -92,6 +92,47 @@ if($target.length>0){
 
    </section> <!-- Header Fim -->
 
+   <!-- Pop Up Configuraçoes -->
+   <dialog class="animated" style="opacity: 0!important;">
+      <div class="displayDistance">
+      <dialogTitle>Configurações do Site</dialogTitle>
+      <button class="botaoFechar" onclick="fecharModalConfig();">✕</button>
+      </div>
+      <br>
+      <div class="displayFlex">
+         <div class="minhaRow">
+            <h4>Idioma</h4>
+            <div class="opcoesFlags">
+               <div class="opcaoFlag">
+                  <img src="https://vectorflags.s3.amazonaws.com/flags/br-square-01.png" alt="" srcset="">
+               </div>
+               <div class="opcaoFlag">
+                  <img src="https://vectorflags.s3.amazonaws.com/flags/us-square-01.png" alt="" srcset="">
+               </div>
+               <div class="opcaonotDisponivel">
+                  <img src="https://vectorflags.s3.amazonaws.com/flags/fr-square-01.png" alt="" srcset="">
+               </div>
+               <div class="opcaonotDisponivel">
+                  <img src="https://vectorflags.s3.amazonaws.com/flags/es-square-01.png" alt="" srcset="">
+               </div>
+            </div>
+
+         </div>
+         <div class="minhaRow">
+            <h4>Tema</h4>
+            <div class="opcoesFlags">
+               <div class="opcaoFlag">
+                  <img src="images/corLight.png" alt="" srcset="">
+               </div>
+               <div class="opcaoFlag">
+                  <img src="images/corDark.png" alt="" srcset="">
+               </div>
+            </div>
+         </div>
+      </div>
+
+      
+  </dialog>
 
    <!-- Sobre
    ================================================== -->
@@ -942,6 +983,7 @@ if($target.length>0){
    <script src="js/waypoints.js"></script>
    <script src="js/magnific-popup.js"></script>
    <script src="js/init2.js"></script>
+   <script src="js/modalConfig.js"></script>
 
    <script>
       let list = document.querySelectorAll('.list');
