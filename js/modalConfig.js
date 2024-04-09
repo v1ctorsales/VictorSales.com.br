@@ -4,6 +4,6 @@ function fecharModalConfig(){
     }
 
 function abrirModal(){
-    document.querySelector("dialog").style.opacity = 0.01
+    document.querySelector("dialog").style.opacity = 0.2
     document.querySelector("dialog").classList.remove("animated");
 }
