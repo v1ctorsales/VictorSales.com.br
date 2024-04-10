@@ -1043,7 +1043,7 @@ text-align: center;
    line-height: 60px;
  	border-radius: 100%;
 }
-#go-top a:hover { background-color: #86377b; }
+#go-top a:hover { background-color: #b887fc; }
 
 .portfolio-item .item-wrap.hide{
    display: none;
@@ -1114,3 +1114,15 @@ gap: 5px;
    grid-template-columns: 55% 45%;
 }
    
+#engrenagempai:hover  #engrenagem{
+   transition: 0.70s;
+   -webkit-transition: 0.70s;
+   -moz-transition: 0.70s;
+   -ms-transition: 0.70s;
+   -o-transition: 0.70s;
+   -webkit-transform: rotate(180deg);
+   -moz-transform: rotate(180deg);
+   -o-transform: rotate(180deg);
+   -ms-transform: rotate(180deg);
+   transform: rotate(180deg);
+}
