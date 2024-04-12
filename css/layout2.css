@@ -202,7 +202,9 @@ ul#nav li a:hover {
    
 
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #b887fc; }
+ul#nav li.current a { color: rgb(255, 247, 255)!important;     text-shadow: 0 0 2px #6c00ff; /* horizontal-offset vertical-offset 'blur' colour */
+   -moz-text-shadow: 0 0 2px #6c00ff;
+   -webkit-text-shadow: 0 0 2px #6c00ff;; }  
 
 
 /* ------------------------------------------------------------------ */
@@ -1043,7 +1045,11 @@ text-align: center;
    line-height: 60px;
  	border-radius: 100%;
 }
-#go-top a:hover { background-color: #b887fc; }
+#go-top a:hover { background-color: #ffffff; 
+   border: 1px solid rgb(108, 0, 255);
+   font-size: 30px!important;
+color:rgb(108, 0, 255);
+}
 
 .portfolio-item .item-wrap.hide{
    display: none;

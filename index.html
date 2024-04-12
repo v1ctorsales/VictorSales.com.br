@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 
-<script>
-   var $target=$('[alt*="000webhost"]');
-if($target.length>0){
- var $div=$target.parent().closest('div').remove();
-}
-</script>
+
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 8)|!(IE)]><!--><html class="" lang="en"> <!--<![endif]-->
@@ -61,15 +56,12 @@ if($target.length>0){
 	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
          <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home"><i class="fa-solid fa-house"></i></a></li>
+            <li id="homeLi" class="current"><a class="smoothscroll" href="#home"><i class="fa-solid fa-house"></i></a></li>
             <li><a class="smoothscroll" href="#about">Sobre</a></li>
             <li><a class="smoothscroll" href="#portfolio">Projetos</a></li>
             <li><a class="smoothscroll" href="#contact">Contato</a></li>
             <li id="engrenagempai" ><a class="smoothscroll" href="javascript:;" onclick="abrirModal();"><i class="fa-solid fa-gear" id="engrenagem"></i></a></li>
-            
-
-
-            
+  
          </ul> <!-- fim #nav -->
          
 
@@ -254,7 +246,7 @@ if($target.length>0){
                </div>
                <div class="textotop">
                  <p class="toptitle">myterminal</p>
-                 <p class="">Baixe vídeos e músicas do youtube, crie qrCodes e muito mais!</p>
+                 <p class="">Baixe vídeos e músicas, crie qrCodes, ecurte URLs e muito mais!</p>
                  <div class="mycont">
                   Javascript • HTML • CSS • API
                  </div>
@@ -958,7 +950,7 @@ if($target.length>0){
       <div class="row">
 
          <div class="twelve columns">
-            <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home" style="font-size: 32px;">▲</a></div>
+            <div id="go-top"><a class="smoothscroll" title="Voltar ao início" href="#home" style="font-size: 32px;">▲</a></div>
 
 
             <ul class="copyright">
