@@ -434,7 +434,6 @@ Support:
 					}
 
                     if(amount = 45){
-                     console.log(amount);
                     document.querySelector("#homeLi").classList.add("current")
                     }
                 
