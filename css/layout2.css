@@ -237,8 +237,8 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 61%, rgba(249,249,249,1)
 
 #about .profile-pic {
    position: relative;
-   height: 220px;
-   border-radius: 22%;
+   width: 60%;
+   border-radius: 10%;
 }
 #about .contact-details { width: 41.66667%; }
 #about .download {
