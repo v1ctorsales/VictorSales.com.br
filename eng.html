@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="" lang="en"> <!--<![endif]-->
+<head>
+
+   <style>img[alt="www.000webhost.com"]{display:none;}</style>
+   <!--- Basico
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Victor Sales</title>
+
+   <!-- Mobile
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default2.css">
+	<link rel="stylesheet" href="css/layout2.css">
+   <link rel="stylesheet" href="css/media-queries2.css">
+   <link rel="stylesheet" href="css/magnific-popup2.css">
+   <link rel="stylesheet" href="https://fontawesome.com/v5/icons/arrow-circle-down?style=solid&s=solid&f=classic">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=VT323&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=REM:wght@200&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+
+   <!-- Script
+   ================================================== -->
+
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <section id="home" class="sec home">
+      
+      
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li id="homeLi" class="current"><a class="smoothscroll" href="#home"><i class="fa-solid fa-house"></i></a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+            <li><a class="smoothscroll" href="#portfolio">Projects</a></li>
+            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+            <li id="engrenagempai" ><a class="smoothscroll" href="javascript:;" onclick="abrirModal();"><i class="fa-solid fa-gear" id="engrenagem"></i></a></li>
+  
+         </ul> <!-- fim #nav -->
+         
+
+      </nav> <!-- fim #nav-wrap -->
+      
+
+         <div class="pagInicial lineupanim">
+            <div class="titulo ">
+               <div class="inline"><h3 class="mechamo">Hi, i'm  <span class="2">Victor</span></h3></div>
+               <br>
+                <div class="inline"><h3 class="mechamo"> And i'm a <span class="2">software engineer</span></h3></div>
+              </div>
+              <div class="imgTitulo">
+               <img src="https://cdn.dribbble.com/users/330915/screenshots/3587000/10_coding_dribbble.gif" alt="" srcset="">
+              </div>
+         </div>
+         <ul class="cliqueaquiUl"><a class="smoothscroll" href="#about"><h3 class="cliqueaqui"><i class="fa-solid fa-circle-plus fa-2xl"></i></h3></a></ul>
+
+
+
+   </section> <!-- Header Fim -->
+
+   <!-- Pop Up Configuraçoes -->
+   <dialog class="animated" style="opacity: 0!important; top: -1000px;">
+    <div class="displayDistance">
+       <dialogTitle>Site Settings</dialogTitle>
+       <button class="botaoFechar" onclick="fecharModalConfig();">✕</button>
+    </div>
+    <br>
+    <div class="displayFlex">
+       <div class="minhaRow">
+          <h4>Language</h4>
+          <div class="opcoesFlags">
+             <div class="opcaoFlag" onclick="changeToPortuguese();">
+                <img src="https://vectorflags.s3.amazonaws.com/flags/br-square-01.png" alt="Portuguese">
+             </div>
+             <div class="opcaoFlag">
+                <img src="https://vectorflags.s3.amazonaws.com/flags/us-square-01.png" alt="English">
+             </div>
+             <div class="opcaonotDisponivel">
+                <img src="https://vectorflags.s3.amazonaws.com/flags/fr-square-01.png" alt="French">
+             </div>
+             <div class="opcaonotDisponivel">
+                <img src="https://vectorflags.s3.amazonaws.com/flags/es-square-01.png" alt="Spanish">
+             </div>
+          </div>
+       </div>
+       <div class="minhaRow">
+          <h4>Theme</h4>
+          <div class="opcoesFlags">
+             <div class="opcaoFlag">
+                <img src="images/corLight.png" alt="Light Theme">
+             </div>
+             <div class="opcaoFlag">
+                <img src="images/corDark.png" alt="Dark Theme">
+             </div>
+          </div>
+       </div>
+    </div>
+ </dialog>
+ 
+ <script>
+    function changeToPortuguese() {
+       window.location.href = "index.html";
+    }
+ </script>
+ 
+ 
+
+   <!-- Sobre
+   ================================================== -->
+   <section id="about">
+      <h2 class="newH2">About</h2>
+      <div class="row">
+
+         <div class="three columns">
+
+            <img class="profile-pic"  src="images/profilepic3.jpg" alt=""/>
+            <p class="smDesc">Persistent and curious.</p>
+            <div class="holder"><a href="images/Victor Sales CV (ENG).pdf" target="_blank" class="button"><i class="fa fa-download" style="display:block;"></i>Résumé
+            </a style="display:block;"></div>
+            <div class="holdericones">
+               <a href="https://open.spotify.com/playlist/4735kEx0Y7i0ZbgTvRsuqL" target="_blank"><p class="icontest"><i class="fa-brands fa-spotify"></i></p></a>
+               <a href="https://letterboxd.com/oneS2/" target="_blank"><p class="icontest"><i class="fa-solid fa-clapperboard"></i></p></a>
+               <a href="https://www.chess.com/member/v1ctorsales" target="_blank"> <p class="icontest"><i class="fa-solid fa-chess"></p></i></a>
+            </div>
+            <div">         
+         </div>
+         <div class="nine columns main-col">
+
+
+
+            <p class="lineUp"><span class="spanBold">Nice to meet you, my name is Victor!</span> I’m from Belo Horizonte, Brazil, and passionate about technology, sustainability, and innovation in agriculture. I believe technology drives positive change, especially in food security and environmental sustainability. I’ll graduate with a Bachelor’s in Information Systems from Faculdade Pitágoras in June 2025. I’m fluent in Portuguese and English, and currently learning French.
+            </p>
+            
+            <div class="controlep">
+
+                <p class="hashtagitem _controle on" data-filter="prof">
+                    <span class="spanBold">I have over 3 years of experience</span> in programming! Currently, I work as a full stack developer at TAGNA Tecnologia e Automação Industrial, contributing to Nexum, 
+                    a comprehensive system for managing and optimizing industrial machinery. Implementing Industry 4.0 concepts in plants, factories, and industries worldwide.
+                 </p>
+                 
+   
+            </div>
+            <div class="controlep">
+
+               <p class="hashtagitem _controle on" data-filter="prof"><span class="spanBold">I use these technologies</span>
+                  
+               </p>
+               <ul class="tecnologias">
+                  <li class="liTecnologia"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" title="Java"></li>
+                  <li class="liTecnologia"><img src="https://static-00.iconduck.com/assets.00/spring-icon-256x256-2efvkvky.png" title="Spring"></li>
+                  <li class="liTecnologia"><img src="https://cdn.jsdelivr.net/npm/@programming-languages-logos/csharp@0.0.0/csharp_256x256.png" title="C#"></li>
+                  <li class="liTecnologia"><img src="https://pulseway.s3.amazonaws.com/website/images/features/patch/3pp-logos/NET_Core.png" title=".NET"></li>
+                  <li class="liTecnologia"><img src="https://cdn.iconscout.com/icon/free/png-256/free-javascript-23-1174949.png" title="Javascript"></li>
+                  <li class="liTecnologia"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvToT-HVAMnGEZXuCrcyQ0IYWUXK-V6K40VA&s" title="Typescript"></li>
+                  <li class="liTecnologia"><img src="https://cdn.iconscout.com/icon/free/png-256/free-react-4-1175110.png" title="React"></li>
+                  <li class="liTecnologia"><img src="https://cdn.iconscout.com/icon/free/png-256/free-node-js-1174925.png?f=webp" title="Node.JS"></li>
+                  <li class="liTecnologia"><img src="https://i.pinimg.com/originals/00/47/41/004741d0cd8e7face0e44392387ac18c.png" title="SQL Server"></li>
+                  <li class="liTecnologia"><img src="https://pngimg.com/d/mysql_PNG36.png" title="MySQL"></li>
+                  <li class="liTecnologia"><img src="https://cdn.iconscout.com/icon/free/png-256/free-git-225996.png?f=webp" title="Git"></li>
+                  <li class="liTecnologia"><img src="https://cdn.iconscout.com/icon/free/png-256/free-jenkins-1-282385.png" title="Jenkins"></li>
+               </div>
+            </div>
+
+         </div> 
+         </div>   
+      </div>
+      <div class="row">
+         <div class="three columns">
+            
+         </div>
+
+
+         </div>   
+         
+      </div>
+
+
+   </section> <!--Fim Sobre-->
+
+   <div class="dots"><div class="dot">&nbsp</div> <div class="dot2">&nbsp</div> <div class="dot3">&nbsp</div></div>
+   <!-- Portfolio
+   ================================================== -->
+
+   
+   <section id="portfolio">
+    <h2 class="newH2">PROJECTS</h2>
+    <div class="row">
+       <div class="toppers">
+          <div class="columns portfolio-item topper" data-item="web" style="grid-column-start: 1; grid-column-end: 2;">
+             <div class="topimg item-wrap">
+                <a href="https://isendit.com.br" target="_blank">
+                   <img alt="" src="images/portfolio/isenditlogo.png">
+                   <div class="overlay"></div>
+                   <div class="link-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+             </div>
+             <div class="textotop">
+                <p class="toptitle">iSendIT</p>
+                <p>Ticket creation service for network and cybersecurity companies.</p>
+                <div class="mycont">
+                   React • Node • Javascript • SQL • API
+                </div>
+                <div class="portifolioBotoesExternos inline">
+                   <a class="btn-producao" href="https://isendit.com.br" target="_blank">
+                      <p><i class="fa-solid fa-arrow-up-right-from-square"></i> View Live!</p>
+                   </a>
+                   <a class="botagoGithub" href="https://github.com/v1ctorsales/sendtask" target="_blank">
+                      <i class="fa fa-github" style="font-size: 26px; margin-left: 12px; margin-right: 12px;"></i>
+                   </a>
+                </div>
+             </div>
+          </div>
+ 
+          <div class="columns portfolio-item topper" data-item="web" style="grid-column-start: 2; grid-column-end: 2;">
+             <div class="topimg item-wrap">
+                <a href="https://app.victorsales.com.br" target="_blank">
+                   <img alt="" src="images/portfolio/myterminal.jpg">
+                   <div class="overlay"></div>
+                   <div class="link-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+             </div>
+             <div class="textotop">
+                <p class="toptitle">myterminal</p>
+                <p>Download videos and music, create QR codes, shorten URLs, and much more!</p>
+                <div class="mycont">
+                   Javascript • HTML • CSS • API
+                </div>
+                <div class="portifolioBotoesExternos inline">
+                   <a class="btn-producao" href="https://app.victorsales.com.br" target="_blank">
+                      <p><i class="fa-solid fa-arrow-up-right-from-square"></i> View Live!</p>
+                   </a>
+                   <a class="botagoGithub" href="https://github.com/v1ctorsales/Terminal" target="_blank">
+                      <i class="fa fa-github" style="font-size: 26px; margin-left: 12px; margin-right: 12px;"></i>
+                   </a>
+                </div>
+             </div>
+          </div>
+ 
+          <div class="columns portfolio-item topper" data-item="web" style="grid-column-start: 1; grid-column-end: 1;">
+             <div class="topimg item-wrap">
+                <a href="https://v1ctorsales.github.io/Clima/" target="_blank">
+                   <img alt="" src="images/portfolio/climalogo.jpg">
+                   <div class="overlay"></div>
+                   <div class="link-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+             </div>
+             <div class="textotop">
+                <p class="toptitle">Clima</p>
+                <p>Check the weather of cities worldwide in real-time.</p>
+                <div class="mycont">
+                   Angular • Javascript • HTML • CSS • API
+                </div>
+                <div class="portifolioBotoesExternos inline">
+                   <a class="btn-producao" href="https://v1ctorsales.github.io/Clima/" target="_blank">
+                      <p><i class="fa-solid fa-arrow-up-right-from-square"></i> View Live!</p>
+                   </a>
+                   <a class="botagoGithub" href="https://github.com/v1ctorsales/Clima" target="_blank">
+                      <i class="fa fa-github" style="font-size: 26px; margin-left: 12px; margin-right: 12px;"></i>
+                   </a>
+                </div>
+             </div>
+          </div>
+ 
+          <div class="columns portfolio-item topper" data-item="web" style="grid-column-start: 2; grid-column-end: 2;">
+             <div class="topimg item-wrap">
+                <a href="https://v1ctorsales.github.io/Solar/" target="_blank">
+                   <img alt="" src="images/portfolio/solar.jpg">
+                   <div class="overlay"></div>
+                   <div class="link-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+             </div>
+             <div class="textotop">
+                <p class="toptitle">Solar</p>
+                <p>Information about the planets in our solar system!</p>
+                <div class="mycont">
+                   Javascript • HTML • CSS
+                </div>
+                <div class="portifolioBotoesExternos inline">
+                   <a class="btn-producao" href="https://v1ctorsales.github.io/Solar/" target="_blank">
+                      <p><i class="fa-solid fa-arrow-up-right-from-square"></i> View Live!</p>
+                   </a>
+                   <a class="botagoGithub" href="https://github.com/v1ctorsales/Solar" target="_blank">
+                      <i class="fa fa-github" style="font-size: 26px; margin-left: 12px; margin-right: 12px;"></i>
+                   </a>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ 
+
+   <div class="dots2"><div class="dot">&nbsp</div> <div class="dot2">&nbsp</div> <div class="dot3">&nbsp</div></div>
+
+   <!-- Contato
+   ================================================== -->
+
+   <section id="contact">
+    <h2 class="newH2">Get in Touch</h2>
+    <p style="text-align: center; margin-top:20px; line-height: 30px;
+    color: rgb(85, 85, 85);">I’m always open to new job opportunities!</p>
+ 
+    <ul class="social" style="margin-top: 60px;">
+       <li><a href="https://www.facebook.com/victoralvesales/" target="_blank"><i class="fa fa-facebook" style="font-size: 40px; margin-left: 12px; margin-right: 12px;"></i></a></li>
+       <li><a href="https://www.linkedin.com/in/victor--sales/" target="_blank"><i class="fa fa-linkedin" style="font-size: 40px; margin-left: 12px; margin-right: 12px;"></i></a></li>
+       <li><a href="https://github.com/v1ctorsales" target="_blank"><i class="fa fa-github" style="font-size: 45px; margin-left: 12px; margin-right: 12px;"></i></a></li>
+       <li><a href="mailto:victor.alves.sales@hotmail.com" target="_blank"><i class="fa fa-envelope" style="font-size: 38px; margin-left: 8px; margin-right: 12px;"></i></a></li>
+    </ul>
+ </section> <!-- End of Contact Section -->
+ 
+
+   <div class="divisao"> </div>
+
+      
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+            <div id="go-top"><a class="smoothscroll" title="Voltar ao início" href="#home" style="font-size: 32px;">▲</a></div>
+
+
+            <ul class="copyright">
+               <li>2025</li>
+               <li>By <a title="Victor Sales" href="#home"> Victor Sales.</a></li>
+            </ul>
+
+         </div>
+
+
+      </div>
+
+   </footer> <!-- Footer fim-->
+   <p class="pEfeito"> 
+
+      </p>
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script src="https://kit.fontawesome.com/1da5e67fc7.js" crossorigin="anonymous"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init2.js"></script>
+   <script src="js/modalConfig.js"></script>
+
+   <script>
+      let list = document.querySelectorAll('.list');
+      let itembox = document.querySelectorAll('.portfolio-item')
+      
+      for(let i = 0; i<list.length; i++){
+         list[i].addEventListener('click', function()
+         {
+            for(let j = 0; j<list.length; j++){
+               list[j].classList.remove('active');
+
+            }
+            this.classList.add('active');
+
+            let dataFilter = this.getAttribute('data-filter');
+
+            for(let k = 0; k<itembox.length; k++){
+               itembox[k].classList.remove('active');
+               itembox[k].classList.add('hide');
+
+               if(itembox[k].getAttribute('data-item') == dataFilter || dataFilter == "tudo"){
+                  itembox[k].classList.remove('hide');
+                  itembox[k].classList.add('active');
+               }
+               if(itembox[k].getAttribute('data2') == dataFilter || dataFilter == "tudo"){
+                  itembox[k].classList.remove('hide');
+                  itembox[k].classList.add('active');
+               }
+               
+            }
+
+         })
+      }
+
+      document.addEventListener("DOMContentLoaded", function() {
+         var elemento = document.querySelector(".lineupanim");
+         elemento.classList.add("lineUp");
+
+         // Remover a classe após a animação ter sido executada
+         elemento.addEventListener("animationend", function() {
+            elemento.classList.remove("lineUp");
+         });
+      });
+
+      let hastagcontainer = document.querySelectorAll('.hastagcontainer')
+      let hashtagitem = document.querySelectorAll('.hashtagitem')
+
+      let _controle = document.querySelectorAll('._controle')
+
+      for(let x = 0; x<hastagcontainer.length; x++){
+      hastagcontainer[x].addEventListener("click", function() {
+         let dataFilter = this.getAttribute('data-filter');
+
+         if(dataFilter == 'prof'){
+            for(let j = 0; j<hastagcontainer.length; j++){
+               hastagcontainer[j].classList.remove('ativo');
+            }
+            hastagcontainer[x].classList.add("ativo");
+
+            for(let y = 0; y<hashtagitem.length; y++){
+               hashtagitem[y].classList.remove("on")
+            }
+            _controle[0].classList.add("on");
+            hastagcontainer[1].innerHTML = "#o profissional"
+
+         }
+      
+         if(dataFilter == 'devsoft'){
+            for(let j = 0; j<hastagcontainer.length; j++){
+               hastagcontainer[j].classList.remove('ativo');
+            }
+            hastagcontainer[x].classList.add("ativo");
+
+            for(let y = 0; y<hashtagitem.length; y++){
+               hashtagitem[y].classList.remove("on")
+            }
+            _controle[1].classList.add("on");
+            hastagcontainer[1].innerHTML = "#Desenvolvimento de Software"
+
+         }
+         if(dataFilter == 'devweb'){
+            for(let j = 0; j<hastagcontainer.length; j++){
+               hastagcontainer[j].classList.remove('ativo');
+            }
+            hastagcontainer[x].classList.add("ativo");
+
+            for(let y = 0; y<hashtagitem.length; y++){
+               hashtagitem[y].classList.remove("on")
+            }
+            _controle[2].classList.add("on");
+            hastagcontainer[1].innerHTML = "#Desenvolvimento Web"
+
+         }
+         if(dataFilter == 'dev3d'){
+            for(let j = 0; j<hastagcontainer.length; j++){
+               hastagcontainer[j].classList.remove('ativo');
+            }
+            hastagcontainer[x].classList.add("ativo");
+
+            for(let y = 0; y<hashtagitem.length; y++){
+               hashtagitem[y].classList.remove("on")
+            }
+            _controle[3].classList.add("on");
+            hastagcontainer[1].innerHTML = "#Desenvolvimento 3D"
+
+         }
+         if(dataFilter == 'ciber'){
+            for(let j = 0; j<hastagcontainer.length; j++){
+               hastagcontainer[j].classList.remove('ativo');
+            }
+            hastagcontainer[x].classList.add("ativo");
+
+            for(let y = 0; y<hashtagitem.length; y++){
+               hashtagitem[y].classList.remove("on")
+            }
+            _controle[4].classList.add("on");
+            hastagcontainer[1].innerHTML = "#Cibersegurança"
+
+         }
+
+      });
+      }
+
+   </script>
+<script src="https://kit.fontawesome.com/1da5e67fc7.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
