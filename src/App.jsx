@@ -133,7 +133,7 @@ const I18N = {
       {
         title: "iSendit",
         desc: "A script creation system for cybersecurity companies, automating the creation of firewall rules and objects.",
-        image: "/imgs/isendit.png",
+        image: "/images/isendit.png",
         github: "https://github.com/v1ctorsales/iSendit",
         demo: "https://isendit.com.br",
         tags: ["JavaScript", "React", "Node", "SQL"],
@@ -141,7 +141,7 @@ const I18N = {
       {
         title: "myterminal",
         desc: "A terminal with utilities to download music and videos from various platforms, shorten URLs, create QR codes, and much more.",
-        image: "/imgs/terminal.png",
+        image: "/images/terminal.png",
         github: "https://github.com/v1ctorsales/Terminal",
         demo: "https://app.victorsales.com.br",
         tags: ["JavaScript", "Node", "APIs"],
@@ -149,7 +149,7 @@ const I18N = {
       {
         title: "Hydra Launcher",
         desc: "Hydra is a game launcher that allows you to download, play, track your stats and manage your games all in one place.",
-        image: "/imgs/Hydra.avif",
+        image: "/images/Hydra.avif",
         github: "https://github.com/hydralauncher/hydra",
         demo: "https://hydralauncher.gg",
         tags: ["TypeScript", "React", "Python"],
@@ -178,13 +178,23 @@ const I18N = {
     education: [
       {
         titleClosed: "M.Sc. — Artificial Intelligence for Sustainable Societies",
-        titleOpen: "Master of Science — Artificial Intelligence for Sustainable Societies",
+        titleOpen: "Master of Science in Sustainable Information Technologies",
         period: "📅 Aug 2025 – Aug 2027 · 2 years",
-        location: "🚩 Tallinn University (EE) • Universidade Lusófona (PT) • Tampere University (FI)",
+        location: "🚩 Universidade Lusófona (PT)",
         notes: [
           "⭐ Erasmus Mundus Scholarship for Academic Excellence — European Union funded"
         ],
       },
+      //{
+      //  titleClosed: "M.SS. — Sustainable Information Technologies ",
+      //  titleOpen: "Master of Social Science — Sustainable Information Technologies ",
+      //  period: "📅 Aug 2025 – Aug 2027 · 2 years",
+      //  location: "🚩 Tampere University (FI)",
+       // notes: [
+       //   "⭐ Erasmus Mundus Scholarship for Academic Excellence — European Union funded"
+       // ],
+     // },
+      
       {
         titleClosed: "B.Sc. R. — Artificial Intelligence",
         titleOpen: "Bachelor of Science Research — Artificial Intelligence Usage in Agriculture",
@@ -245,7 +255,7 @@ const I18N = {
       {
         title: "iSendit",
         desc: "Sistema de criação de scripts para empresas de cibersegurança, automatizando a criação de regras e objetos de firewall.",
-        image: "/imgs/isendit.png",
+        image: "/images/isendit.png",
         github: "https://github.com/v1ctorsales/iSendit",
         demo: "https://isendit.com.br",
         tags: ["JavaScript", "React", "Node", "SQL"],
@@ -253,7 +263,7 @@ const I18N = {
       {
         title: "myterminal",
         desc: "Terminal com utilitários para baixar músicas e vídeos, encurtar URLs, criar QR codes e muito mais.",
-        image: "/imgs/terminal.png",
+        image: "/images/terminal.png",
         github: "https://github.com/v1ctorsales/Terminal",
         demo: "https://app.victorsales.com.br",
         tags: ["JavaScript", "Node", "APIs"],
@@ -261,7 +271,7 @@ const I18N = {
       {
         title: "Hydra Launcher",
         desc: "Launcher de jogos para baixar, jogar, acompanhar estatísticas e gerenciar seus jogos em um só lugar.",
-        image: "/imgs/Hydra.avif",
+        image: "/images/Hydra.avif",
         github: "https://github.com/hydralauncher/hydra",
         demo: "https://hydralauncher.gg",
         tags: ["TypeScript", "React", "Python"],
@@ -392,7 +402,7 @@ const projects = [
   {
     title: "iSendit",
     desc: "A script creation system for cybersecurity companies, automating the creation of firewall rules and objects.",
-    image: "/imgs/isendit.png",
+    image: "/images/isendit.png",
     github: "https://github.com/v1ctorsales/iSendit",
     demo: "https://isendit.com.br",
     tags: ["Javascript", "React", "Node", "SQL"],
@@ -400,7 +410,7 @@ const projects = [
   {
     title: "myterminal",
     desc: "A terminal with utilities to download music and videos from various platforms, shorten URLs, create QR codes, and much more.",
-    image: "/imgs/terminal.png",
+    image: "/images/terminal.png",
     github: "https://github.com/v1ctorsales/Terminal",
     demo: "https://app.victorsales.com.br",
     tags: ["Javascript", "Node", "APIs"],
@@ -408,7 +418,7 @@ const projects = [
   {
     title: "Hydra Launcher",
     desc: "Hydra is a game launcher that allows you to download, play, track your stats and manage your games all in one place.",
-    image: "/imgs/Hydra.avif",
+    image: "/images/Hydra.avif",
     github: "https://github.com/hydralauncher/hydra",
     demo: "https://hydralauncher.gg",
     tags: ["Typescript", "React", "Python"],
@@ -434,7 +444,7 @@ function Hero({ lang = "en" }) {
           {/* Foto */}
           <Box flexShrink={0}>
             <Image
-              src="/imgs/profilepic.jpg"
+              src="/images/profilepic.jpg"
               alt="Victor Sales"
               boxSize={{ base: "180px", md: "240px" }}
               borderRadius="full"
@@ -466,7 +476,7 @@ function Hero({ lang = "en" }) {
             <HStack spacing={4} mt={5}>
               <Button
                 as="a"
-                href="/imgs/Victor Sales (ENG).pdf"
+                href="/images/Victor Sales (ENG).pdf"
                 download
                 bg="dracula.fg"
                 color="dracula.bg"
