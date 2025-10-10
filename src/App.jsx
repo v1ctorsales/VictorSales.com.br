@@ -1,13 +1,29 @@
 import {
-  Box, Container, Flex, HStack, VStack, Heading, Text, Button,
-  Link, Icon, SimpleGrid, Card, Image
-} from "@chakra-ui/react"
-import { FaGithub, FaLinkedin, FaArrowRight, FaExternalLinkAlt, FaEnvelope, FaCopy } from "react-icons/fa"
-import React from "react"
-import { FiPlus } from "react-icons/fi"
-import { motion, AnimatePresence } from "framer-motion"
-
-
+  Box,
+  Container,
+  Flex,
+  HStack,
+  VStack,
+  Heading,
+  Text,
+  Button,
+  Link,
+  Icon,
+  SimpleGrid,
+  Card,
+  Image,
+} from "@chakra-ui/react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaArrowRight,
+  FaExternalLinkAlt,
+  FaEnvelope,
+  FaCopy,
+} from "react-icons/fa";
+import React from "react";
+import { FiPlus } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 /* =========================
    Typing title (cargo)
@@ -18,58 +34,84 @@ function TypingTitle({
   deletingSpeed = 40,
   pauseAfterType = 1200,
 }) {
-  const [idx, setIdx] = React.useState(0)
-  const [sub, setSub] = React.useState("")
-  const [deleting, setDeleting] = React.useState(false)
-  const [showCursor, setShowCursor] = React.useState(true)
+  const [idx, setIdx] = React.useState(0);
+  const [sub, setSub] = React.useState("");
+  const [deleting, setDeleting] = React.useState(false);
+  const [showCursor, setShowCursor] = React.useState(true);
 
   const longest = React.useMemo(
     () => texts.reduce((a, b) => (a.length >= b.length ? a : b), ""),
     [texts]
-  )
+  );
 
   React.useEffect(() => {
-    const full = texts[idx]
+    const full = texts[idx];
     if (!deleting && sub.length < full.length) {
-      const t = setTimeout(() => setSub(full.slice(0, sub.length + 1)), typingSpeed)
-      return () => clearTimeout(t)
+      const t = setTimeout(
+        () => setSub(full.slice(0, sub.length + 1)),
+        typingSpeed
+      );
+      return () => clearTimeout(t);
     }
     if (!deleting && sub.length === full.length) {
-      const t = setTimeout(() => setDeleting(true), pauseAfterType)
-      return () => clearTimeout(t)
+      const t = setTimeout(() => setDeleting(true), pauseAfterType);
+      return () => clearTimeout(t);
     }
     if (deleting && sub.length > 0) {
-      const t = setTimeout(() => setSub(full.slice(0, sub.length - 1)), deletingSpeed)
-      return () => clearTimeout(t)
+      const t = setTimeout(
+        () => setSub(full.slice(0, sub.length - 1)),
+        deletingSpeed
+      );
+      return () => clearTimeout(t);
     }
     if (deleting && sub.length === 0) {
       const t = setTimeout(() => {
-        setDeleting(false)
-        setIdx((idx + 1) % texts.length)
-      }, 250)
-      return () => clearTimeout(t)
+        setDeleting(false);
+        setIdx((idx + 1) % texts.length);
+      }, 250);
+      return () => clearTimeout(t);
     }
-  }, [sub, deleting, idx, texts, typingSpeed, deletingSpeed, pauseAfterType])
+  }, [sub, deleting, idx, texts, typingSpeed, deletingSpeed, pauseAfterType]);
 
   React.useEffect(() => {
-    const t = setInterval(() => setShowCursor(v => !v), 500)
-    return () => clearInterval(t)
-  }, [])
+    const t = setInterval(() => setShowCursor((v) => !v), 500);
+    return () => clearInterval(t);
+  }, []);
 
   return (
     <Box position="relative" display="inline-block">
-      <Text color="transparent" userSelect="none" whiteSpace="nowrap" fontSize="2xl" fontWeight="medium" aria-hidden>
+      <Text
+        color="transparent"
+        userSelect="none"
+        whiteSpace="nowrap"
+        fontSize="2xl"
+        fontWeight="medium"
+        aria-hidden
+      >
         {longest}
       </Text>
 
-      <HStack spacing={1} position="absolute" inset={0} align="center" pointerEvents="none">
-        <Text color="dracula.cyan" fontSize="2xl" fontWeight="medium" whiteSpace="nowrap">
+      <HStack
+        spacing={1}
+        position="absolute"
+        inset={0}
+        align="center"
+        pointerEvents="none"
+      >
+        <Text
+          color="dracula.cyan"
+          fontSize="2xl"
+          fontWeight="medium"
+          whiteSpace="nowrap"
+        >
           {sub}
         </Text>
-        <Box as="span" color="dracula.cyan" opacity={showCursor ? 1 : 0}>|</Box>
+        <Box as="span" color="dracula.cyan" opacity={showCursor ? 1 : 0}>
+          |
+        </Box>
       </HStack>
     </Box>
-  )
+  );
 }
 
 /* =========================
@@ -78,23 +120,23 @@ function TypingTitle({
 function FlagBR(props) {
   return (
     <Box as="svg" viewBox="0 0 640 480" boxSize="18px" {...props}>
-      <path fill="#229e45" d="M0 0h640v480H0z"/>
-      <path fill="#f8e509" d="m320 72 236.9 168L320 408 83.1 240z"/>
-      <circle cx="320" cy="240" r="80" fill="#012169"/>
-      <path fill="#fff" d="M250 240c60-40 180-40 220 0a130 130 0 0 0-220 0z"/>
+      <path fill="#229e45" d="M0 0h640v480H0z" />
+      <path fill="#f8e509" d="m320 72 236.9 168L320 408 83.1 240z" />
+      <circle cx="320" cy="240" r="80" fill="#012169" />
+      <path fill="#fff" d="M250 240c60-40 180-40 220 0a130 130 0 0 0-220 0z" />
     </Box>
-  )
+  );
 }
 function FlagUK(props) {
   return (
     <Box as="svg" viewBox="0 0 60 30" boxSize="18px" {...props}>
-      <path fill="#012169" d="M0 0h60v30H0z"/>
-      <path stroke="#fff" strokeWidth="6" d="M0 0l60 30M60 0L0 30"/>
-      <path stroke="#C8102E" strokeWidth="4" d="M0 0l60 30M60 0L0 30"/>
-      <path fill="#fff" d="M25 0h10v30H25zM0 10v10h60V10z"/>
-      <path fill="#C8102E" d="M27 0h6v30h-6zM0 12h60v6H0z"/>
+      <path fill="#012169" d="M0 0h60v30H0z" />
+      <path stroke="#fff" strokeWidth="6" d="M0 0l60 30M60 0L0 30" />
+      <path stroke="#C8102E" strokeWidth="4" d="M0 0l60 30M60 0L0 30" />
+      <path fill="#fff" d="M25 0h10v30H25zM0 10v10h60V10z" />
+      <path fill="#C8102E" d="M27 0h6v30h-6zM0 12h60v6H0z" />
     </Box>
-  )
+  );
 }
 
 /* =========================
@@ -161,6 +203,7 @@ const I18N = {
         period: "📅 Apr 2024 – Aug 2025 · 1 year and 4 months",
         location: "🚩 TAGNA Tecnologia - Belo Horizonte, Brazil",
         desc: "Built web solutions with Java, Spring, Node.js, and React; integrated industrial machines to the internet (Industry 4.0). Developed components, data flows to endpoints, and API routing (controllers/services).",
+        notes: "⭐ Recommendation by Diego Magalhães",
       },
       {
         title: "Software Engineer — Group Software",
@@ -177,12 +220,14 @@ const I18N = {
     ],
     education: [
       {
-        titleClosed: "M.Sc. — Artificial Intelligence for Sustainable Societies",
+        titleClosed:
+          "M.Sc. — Artificial Intelligence for Sustainable Societies",
         titleOpen: "Master of Science in Sustainable Information Technologies",
         period: "📅 Aug 2025 – Aug 2027 · 2 years",
-        location: "🚩 Universidade Lusófona (PT)",
+        location:
+          "🚩 Tallinn University (EE) • Universidade Lusófona (PT) • Tampere University (FI)",
         notes: [
-          "⭐ Erasmus Mundus Scholarship for Academic Excellence — European Union funded"
+          "⭐ Erasmus Mundus Scholarship for Academic Excellence — European Union funded",
         ],
       },
       //{
@@ -190,19 +235,20 @@ const I18N = {
       //  titleOpen: "Master of Social Science — Sustainable Information Technologies ",
       //  period: "📅 Aug 2025 – Aug 2027 · 2 years",
       //  location: "🚩 Tampere University (FI)",
-       // notes: [
-       //   "⭐ Erasmus Mundus Scholarship for Academic Excellence — European Union funded"
-       // ],
-     // },
-      
+      // notes: [
+      //   "⭐ Erasmus Mundus Scholarship for Academic Excellence — European Union funded"
+      // ],
+      // },
+
       {
         titleClosed: "B.Sc. R. — Artificial Intelligence",
-        titleOpen: "Bachelor of Science Research — Artificial Intelligence Usage in Agriculture",
+        titleOpen:
+          "Bachelor of Science Research — Artificial Intelligence Usage in Agriculture",
         period: "📅 Sep 2024 – Dec 2024 · 4 months",
         location: "🚩 University of South Bohemia — České Budějovice, Czechia",
         notes: [
           "📰 Research on AI in Agriculture",
-          "⭐ Recommendation by M.Sc. & M.Eng. Tomáš Zoubek"
+          "⭐ Recommendation by M.Sc. & M.Eng. Tomáš Zoubek",
         ],
       },
       {
@@ -212,7 +258,7 @@ const I18N = {
         location: "🚩 Faculdade Pitágoras — Contagem, Brazil",
         notes: [
           "📰 Thesis on IoT, AI, and Software Engineering for Sustainability",
-          "⭐ GPA 3.91 / 4"
+          "⭐ GPA 3.91 / 4",
         ],
       },
     ],
@@ -299,22 +345,26 @@ const I18N = {
     ],
     education: [
       {
-        titleClosed: "M.Sc. — Inteligência Artificial para Sociedades Sustentáveis",
-        titleOpen: "Mestrado — Inteligência Artificial para Sociedades Sustentáveis",
+        titleClosed:
+          "M.Sc. — Inteligência Artificial para Sociedades Sustentáveis",
+        titleOpen:
+          "Mestrado — Inteligência Artificial para Sociedades Sustentáveis",
         period: "📅 Ago 2025 – Ago 2027 · 2 anos",
-        location: "🚩 Tallinn University (EE) • Universidade Lusófona (PT) • Tampere University (FI)",
+        location:
+          "🚩 Tallinn University (EE) • Universidade Lusófona (PT) • Tampere University (FI)",
         notes: [
-          "⭐ Bolsa Erasmus Mundus de Excelência Acadêmica — Financiada pela União Europeia"
+          "⭐ Bolsa Erasmus Mundus de Excelência Acadêmica — Financiada pela União Europeia",
         ],
       },
       {
         titleClosed: "B.Sc. R. — Inteligência Artificial",
-        titleOpen: "Pesquisa de Bacharelado — Uso de Inteligência Artificial na Agricultura",
+        titleOpen:
+          "Pesquisa de Bacharelado — Uso de Inteligência Artificial na Agricultura",
         period: "📅 Set 2024 – Dez 2024 · 4 meses",
         location: "🚩 University of South Bohemia — České Budějovice, Tchéquia",
         notes: [
           "📰 Pesquisa em Inteligência Artificial na Agricultura",
-          "⭐ Recomendação do M.Sc. & M.Eng. Tomáš Zoubek"
+          "⭐ Recomendação do M.Sc. & M.Eng. Tomáš Zoubek",
         ],
       },
       {
@@ -324,7 +374,7 @@ const I18N = {
         location: "🚩 Faculdade Pitágoras — Contagem, Brasil",
         notes: [
           "📰 Tese sobre IoT, IA e Engenharia de Software para Sustentabilidade",
-          "⭐ CR 3.91 / 4"
+          "⭐ CR 3.91 / 4",
         ],
       },
     ],
@@ -335,25 +385,24 @@ const I18N = {
       githubLabel: "/v1ctorsales",
     },
   },
-}
+};
 
-
-
-const t = (lang, path) => path.split(".").reduce((acc, k) => acc?.[k], I18N[lang])
+const t = (lang, path) =>
+  path.split(".").reduce((acc, k) => acc?.[k], I18N[lang]);
 
 /* =========================
    TinyLangToggle
 ========================= */
 function TinyLangToggle({ value, onChange }) {
-  const [visible, setVisible] = React.useState(true)
+  const [visible, setVisible] = React.useState(true);
   React.useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY < 20)
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
-  const next = value === "en" ? "pt" : "en"
-  const label = next === "en" ? "Switch to English" : "Mudar para Português"
+    const onScroll = () => setVisible(window.scrollY < 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const next = value === "en" ? "pt" : "en";
+  const label = next === "en" ? "Switch to English" : "Mudar para Português";
 
   return (
     <Box
@@ -382,7 +431,7 @@ function TinyLangToggle({ value, onChange }) {
         {next === "en" ? <FlagUK /> : <FlagBR />}
       </Button>
     </Box>
-  )
+  );
 }
 
 /* =========================
@@ -396,7 +445,7 @@ const sections = {
   experience: "experience",
   education: "education",
   contact: "contact",
-}
+};
 
 const projects = [
   {
@@ -422,8 +471,8 @@ const projects = [
     github: "https://github.com/hydralauncher/hydra",
     demo: "https://hydralauncher.gg",
     tags: ["Typescript", "React", "Python"],
-  }
-]
+  },
+];
 
 const cardProps = {
   bg: "dracula.panel",
@@ -431,7 +480,7 @@ const cardProps = {
   borderColor: "dracula.selection",
   rounded: "2xl",
   p: 6,
-}
+};
 
 /* =========================
    Seções
@@ -440,7 +489,12 @@ function Hero({ lang = "en" }) {
   return (
     <Box id={sections.home} bg="dracula.bg">
       <Container maxW="container" px={4} py={{ base: 16, md: 24 }}>
-        <Flex direction={{ base: "column", md: "row" }} align="center" justify="center" gap={12}>
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          align="center"
+          justify="center"
+          gap={12}
+        >
           {/* Foto */}
           <Box flexShrink={0}>
             <Image
@@ -455,10 +509,16 @@ function Hero({ lang = "en" }) {
           </Box>
 
           {/* Texto */}
-          <VStack spacing={6} textAlign={{ base: "center", md: "left" }} align={{ base: "center", md: "start" }}>
+          <VStack
+            spacing={6}
+            textAlign={{ base: "center", md: "left" }}
+            align={{ base: "center", md: "start" }}
+          >
             {/* Nome + Cargo */}
             <HStack spacing={6} wrap="wrap">
-              <Heading size="2xl" color="dracula.fg">Victor Sales</Heading>
+              <Heading size="2xl" color="dracula.fg">
+                Victor Sales
+              </Heading>
               <TypingTitle
                 texts={t(lang, "hero.typing")}
                 typingSpeed={60}
@@ -469,7 +529,9 @@ function Hero({ lang = "en" }) {
 
             {/* Descrição bilíngue */}
             <Text color="dracula.line" fontSize="lg" maxW="600px" mt={3}>
-              {t(lang, "hero.blurb_1")}<br />{t(lang, "hero.blurb_2")}
+              {t(lang, "hero.blurb_1")}
+              <br />
+              {t(lang, "hero.blurb_2")}
             </Text>
 
             {/* Botões e links sociais */}
@@ -490,10 +552,20 @@ function Hero({ lang = "en" }) {
               </Button>
 
               <HStack spacing={3}>
-                <Link href="https://github.com/v1ctorsales" isExternal color="dracula.fg" _hover={{ color: "dracula.cyan" }}>
+                <Link
+                  href="https://github.com/v1ctorsales"
+                  isExternal
+                  color="dracula.fg"
+                  _hover={{ color: "dracula.cyan" }}
+                >
                   <Icon as={FaGithub} boxSize={6} />
                 </Link>
-                <Link href="https://linkedin.com/in/v1ctorsales" isExternal color="dracula.fg" _hover={{ color: "dracula.cyan" }}>
+                <Link
+                  href="https://linkedin.com/in/v1ctorsales"
+                  isExternal
+                  color="dracula.fg"
+                  _hover={{ color: "dracula.cyan" }}
+                >
                   <Icon as={FaLinkedin} boxSize={6} />
                 </Link>
               </HStack>
@@ -502,7 +574,7 @@ function Hero({ lang = "en" }) {
         </Flex>
       </Container>
     </Box>
-  )
+  );
 }
 
 function About({ lang = "en" }) {
@@ -519,11 +591,11 @@ function About({ lang = "en" }) {
         </VStack>
       </Container>
     </Box>
-  )
+  );
 }
 
 function Experience({ lang = "en" }) {
-  const items = I18N[lang].experience
+  const items = I18N[lang].experience;
 
   return (
     <Box id={sections.experience} bg="dracula.bg">
@@ -549,23 +621,22 @@ function Experience({ lang = "en" }) {
         </VStack>
       </Container>
     </Box>
-  )
+  );
 }
-
 
 /* Expandable (retrocompat: title OR titleClosed/titleOpen) */
 function ExpandableBullet({ title, titleClosed, titleOpen, details }) {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
 
-  const closed = titleClosed ?? title ?? ""
-  const openTitle = titleOpen ?? closed
-  const isOpen = open
-  const displayKey = isOpen ? "open" : "closed"
+  const closed = titleClosed ?? title ?? "";
+  const openTitle = titleOpen ?? closed;
+  const isOpen = open;
+  const displayKey = isOpen ? "open" : "closed";
 
-  const MotionHStack = motion(HStack)
-  const MotionText = motion(Text)
-  const MotionBox = motion(Box)
-  const MotionIcon = motion(Icon)
+  const MotionHStack = motion(HStack);
+  const MotionText = motion(Text);
+  const MotionBox = motion(Box);
+  const MotionIcon = motion(Icon);
 
   return (
     <Box w="full">
@@ -573,7 +644,7 @@ function ExpandableBullet({ title, titleClosed, titleOpen, details }) {
       <MotionHStack
         as="button"
         type="button"
-        onClick={() => setOpen(v => !v)}
+        onClick={() => setOpen((v) => !v)}
         w="full"
         spacing={3}
         align="center"
@@ -643,12 +714,26 @@ function ExpandableBullet({ title, titleClosed, titleOpen, details }) {
         )}
       </AnimatePresence>
     </Box>
-  )
+  );
 }
 
+const noteLinks = {
+  // === English ===
+  "Thesis on IoT, AI, and Software Engineering for Sustainability":
+    "/images/victorsales-usb.pdf",
+  "Research on AI in Agriculture": "/images/research-ai-on-agriculture.pdf",
+  "Recommendation by M.Sc. & M.Eng. Tomáš Zoubek": "/images/letter-zoubek.pdf",
+
+  // === Português ===
+  "Tese sobre IoT, IA e Engenharia de Software para Sustentabilidade":
+    "/images/victorsales-usb.pdf",
+  "Pesquisa em Inteligência Artificial na Agricultura":
+    "/images/research-ai-on-agriculture.pdf",
+  "Recomendação do M.Sc. & M.Eng. Tomáš Zoubek": "/images/letter-zoubek.pdf",
+};
 
 function Education({ lang = "en" }) {
-  const items = I18N[lang].education
+  const items = I18N[lang].education;
 
   return (
     <Box id="education" bg="dracula.bg">
@@ -665,9 +750,29 @@ function Education({ lang = "en" }) {
                   <VStack align="start" spacing={1.5}>
                     <Text color="dracula.line">{it.period}</Text>
                     <Text>{it.location}</Text>
-                    {it.notes.map((note, idx) => (
-                      <Text key={idx}>{note}</Text>
-                    ))}
+
+                    {it.notes.map((note, idx) => {
+                      // remove emojis e espaços extras antes de comparar
+                      const cleaned = note.replace(/^[^\w]+/, "").trim();
+                      const file = noteLinks[cleaned];
+
+                      return (
+                        <HStack key={idx} spacing={2} align="center">
+                          <Text>{note}</Text>
+                          {file && (
+                            <Link
+                              href={file}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              color="dracula.line"
+                              _hover={{ color: "dracula.fg" }}
+                            >
+                              <Icon as={FaExternalLinkAlt} boxSize={3.5} />
+                            </Link>
+                          )}
+                        </HStack>
+                      );
+                    })}
                   </VStack>
                 }
               />
@@ -676,18 +781,20 @@ function Education({ lang = "en" }) {
         </VStack>
       </Container>
     </Box>
-  )
+  );
 }
-
 
 function Skills({ lang = "en" }) {
   const chip = {
     bg: "dracula.selection",
     color: "dracula.fg",
-    px: 3, py: 1.5, rounded: "xl",
-    border: "1px solid", borderColor: "dracula.line",
-    _hover: { bg: "dracula.line" }
-  }
+    px: 3,
+    py: 1.5,
+    rounded: "xl",
+    border: "1px solid",
+    borderColor: "dracula.line",
+    _hover: { bg: "dracula.line" },
+  };
 
   return (
     <Box id={sections.skills} bg="dracula.bg">
@@ -696,19 +803,53 @@ function Skills({ lang = "en" }) {
           <Heading color="dracula.fg">{t(lang, "sections.skills")}</Heading>
           <HStack wrap="wrap" gap={3}>
             {I18N[lang].skills.map((label) => (
-              <Box key={label} {...chip}>{label}</Box>
+              <Box key={label} {...chip}>
+                {label}
+              </Box>
             ))}
           </HStack>
         </VStack>
       </Container>
     </Box>
-  )
+  );
 }
 
-
 function ProjectCard({ p, lang = "en" }) {
+  const cardRef = React.useRef(null);
+
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    // até 12 graus de inclinação
+    const rotateX = ((y - centerY) / centerY) * 5;
+    const rotateY = ((x - centerX) / centerX) * 5;
+
+    card.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  };
+
+  const resetTransform = () => {
+    if (cardRef.current) {
+      cardRef.current.style.transform =
+        "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+      cardRef.current.style.transition = "transform 0.3s ease";
+      setTimeout(() => {
+        if (cardRef.current) cardRef.current.style.transition = "";
+      }, 300);
+    }
+  };
+
   return (
     <Card.Root
+      as={motion.div}
+      ref={cardRef}
       bg="dracula.selection"
       border="1px solid"
       borderColor="dracula.line"
@@ -716,28 +857,51 @@ function ProjectCard({ p, lang = "en" }) {
       overflow="hidden"
       display="flex"
       flexDirection="column"
+      style={{
+        transformStyle: "preserve-3d",
+        transition: "transform 0.1s ease",
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={resetTransform}
     >
-      {/* área de mídia 16:9 */}
+      {/* imagem clicável */}
       <Box position="relative" w="full" overflow="hidden">
         <Box w="full" pt="56.25%" />
-        <Image
-          src={p.image}
-          alt={p.title}
-          position="absolute"
-          inset={0}
-          w="100%"
-          h="100%"
-          objectFit="cover"
-        />
+        <Link
+          href={p.demo}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "block", position: "absolute", inset: 0 }}
+        >
+          <Image
+            src={p.image}
+            alt={p.title}
+            w="100%"
+            h="100%"
+            objectFit="cover"
+          />
+        </Link>
       </Box>
 
       <Card.Body p={4} display="flex" flexDirection="column" gap={3} flex="1">
-        <Heading size="md" color="dracula.fg">{p.title}</Heading>
-        <Text color="dracula.fg" opacity={0.9}>{p.desc}</Text>
+        <Heading size="md" color="dracula.fg">
+          {p.title}
+        </Heading>
+        <Text color="dracula.fg" opacity={0.9}>
+          {p.desc}
+        </Text>
 
         <HStack wrap="wrap" gap={2}>
           {p.tags.map((tag) => (
-            <Box key={tag} bg="dracula.line" color="dracula.fg" px={2.5} py={1} rounded="xl" fontSize="sm">
+            <Box
+              key={tag}
+              bg="dracula.line"
+              color="dracula.fg"
+              px={2.5}
+              py={1}
+              rounded="xl"
+              fontSize="sm"
+            >
               {tag}
             </Box>
           ))}
@@ -746,38 +910,37 @@ function ProjectCard({ p, lang = "en" }) {
         <Box mt="auto" />
 
         <HStack>
-<Link 
-  href={p.github} 
-  target="_blank"
-  rel="noopener noreferrer"
-  color="dracula.fg"
->
-  <HStack gap={2}>
-    <Icon as={FaGithub} />
-    <Text>{t(lang, "sections.github")}</Text>
-  </HStack>
-</Link>
+          <Link
+            href={p.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            color="dracula.fg"
+          >
+            <HStack gap={2}>
+              <Icon as={FaGithub} />
+              <Text>{t(lang, "sections.github")}</Text>
+            </HStack>
+          </Link>
 
-<Link 
-  href={p.demo} 
-  target="_blank"
-  rel="noopener noreferrer"
-  color="dracula.fg"
->
-  <HStack gap={2}>
-    <Icon as={FaExternalLinkAlt} />
-    <Text>{t(lang, "sections.production")}</Text>
-  </HStack>
-</Link>
-
+          <Link
+            href={p.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            color="dracula.fg"
+          >
+            <HStack gap={2}>
+              <Icon as={FaExternalLinkAlt} />
+              <Text>{t(lang, "sections.production")}</Text>
+            </HStack>
+          </Link>
         </HStack>
       </Card.Body>
     </Card.Root>
-  )
+  );
 }
 
 function Projects({ lang = "en" }) {
-  const list = I18N[lang].projects
+  const list = I18N[lang].projects;
 
   return (
     <Box id={sections.projects} bg="dracula.bg">
@@ -785,26 +948,27 @@ function Projects({ lang = "en" }) {
         <VStack spacing={8} align="start">
           <Heading color="dracula.fg">{I18N[lang].sections.projects}</Heading>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
-            {list.map((p) => <ProjectCard key={p.title} p={p} lang={lang} />)}
+            {list.map((p) => (
+              <ProjectCard key={p.title} p={p} lang={lang} />
+            ))}
           </SimpleGrid>
         </VStack>
       </Container>
     </Box>
-  )
+  );
 }
 
-
 function Contact({ lang = "en" }) {
-  const email = "victor.alves.sales@hotmail.com"
-  const [copied, setCopied] = React.useState(false)
+  const email = "victor.alves.sales@hotmail.com";
+  const [copied, setCopied] = React.useState(false);
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(email)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
     } catch {}
-  }
+  };
 
   return (
     <Box id={sections.contact} bg="dracula.bg">
@@ -856,7 +1020,11 @@ function Contact({ lang = "en" }) {
               <Icon as={FaLinkedin} />
               <HStack spacing={2}>
                 <Text>{t(lang, "contact.linkedinLabel")}</Text>
-                <Icon as={FaExternalLinkAlt} color="dracula.line" boxSize={3.5} />
+                <Icon
+                  as={FaExternalLinkAlt}
+                  color="dracula.line"
+                  boxSize={3.5}
+                />
               </HStack>
             </HStack>
 
@@ -874,7 +1042,11 @@ function Contact({ lang = "en" }) {
               <Icon as={FaGithub} />
               <HStack spacing={2}>
                 <Text>{t(lang, "contact.githubLabel")}</Text>
-                <Icon as={FaExternalLinkAlt} color="dracula.line" boxSize={3.5} />
+                <Icon
+                  as={FaExternalLinkAlt}
+                  color="dracula.line"
+                  boxSize={3.5}
+                />
               </HStack>
             </HStack>
           </VStack>
@@ -888,14 +1060,14 @@ function Contact({ lang = "en" }) {
         </Flex>
       </Container>
     </Box>
-  )
+  );
 }
 
 /* =========================
    App
 ========================= */
 export default function App() {
-  const [lang, setLang] = React.useState("en")
+  const [lang, setLang] = React.useState("en");
 
   return (
     <Box bg="dracula.bg" color="dracula.fg" minH="100vh">
@@ -909,5 +1081,5 @@ export default function App() {
       <Education lang={lang} />
       <Contact lang={lang} />
     </Box>
-  )
+  );
 }
