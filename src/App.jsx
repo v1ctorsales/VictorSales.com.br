@@ -24,6 +24,7 @@ import {
 import React from "react";
 import { FiPlus } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaUser, FaUserFriends } from "react-icons/fa";
 
 /* =========================
    Typing title (cargo)
@@ -189,12 +190,31 @@ const I18N = {
         tags: ["JavaScript", "Node", "APIs"],
       },
       {
+        title: "Starvation Map",
+        desc: "A visual data-driven platform to map global hunger spots, trends and raise awareness. Built using the World Bank data.",
+        image: "/images/worldmap.jpg",
+        github: "",
+        demo: "",
+        tags: ["Python", "AI / ML", "Javascript", "React"],
+      },
+    ],
+    contributions: [
+      {
         title: "Hydra Launcher",
-        desc: "Hydra is a game launcher that allows you to download, play, track your stats and manage your games all in one place.",
+        desc: "Game launcher that allows you to download, play, and manage your games.",
         image: "/images/Hydra.avif",
         github: "https://github.com/hydralauncher/hydra",
         demo: "https://hydralauncher.gg",
         tags: ["TypeScript", "React", "Python"],
+      },
+      {
+        title: "Stremio Web",
+        desc: "Video streaming platform. Discover, watch and organize video content from easy to install addons.",
+        image:
+          "https://raw.githubusercontent.com/Stremio/stremio-web/development/screenshots/board.png",
+        github: "https://github.com/Stremio/stremio-web",
+        demo: "https://web.stremio.com",
+        tags: ["Javascript", "Typescript", "React"],
       },
     ],
     experience: [
@@ -586,7 +606,7 @@ function About({ lang = "en" }) {
           <Text color="dracula.line">
             {lang === "en"
               ? "I have over 3 years of experience in programming, mainly as a backend developer. I have worked with Java, Typescript, Python, Databases and much more. I'm currently pursuing my Masters in Artificial Intelligence for Sustainable Societies in Tallinn, Estonia."
-              : "Tenho mais de 3 anos de experiência em programação, principalmente como desenvolvedor backend. Já trabalhei com Java, Typescript, Python, bancos de dados e muito mais. Atualmente curso mestrado em Inteligência Artificial for Sustainable Societies em Tallinn, Estônia."}
+              : "Tenho mais de 3 anos de experiência em programação, principalmente como desenvolvedor backend. Já trabalhei com Java, Typescript, Python, bancos de dados e muito mais. Atualmente mestrando em Inteligência Artificial para Sociedades Sustentáveis em Tallinn, Estônia."}
           </Text>
         </VStack>
       </Container>
@@ -940,17 +960,111 @@ function ProjectCard({ p, lang = "en" }) {
 }
 
 function Projects({ lang = "en" }) {
-  const list = I18N[lang].projects;
+  const [view, setView] = React.useState("personal");
+
+  const personalProjects = I18N[lang].projects;
+  const contributedProjects = I18N[lang].contributions || [];
+  const list = view === "personal" ? personalProjects : contributedProjects;
 
   return (
     <Box id={sections.projects} bg="dracula.bg">
       <Container maxW="container" px={4} py={20}>
         <VStack spacing={8} align="start">
-          <Heading color="dracula.fg">{I18N[lang].sections.projects}</Heading>
+          {/* Heading + Toggle */}
+          <HStack justify="space-between" w="full">
+            <Heading color="dracula.fg">{I18N[lang].sections.projects}</Heading>
+
+            <HStack
+              position="relative"
+              w="10rem"
+              h="2.5rem"
+              bg="dracula.bg"
+              color="dracula.fg"
+              rounded="2xl"
+              cursor="pointer"
+              overflow="hidden"
+              onClick={() =>
+                setView(view === "personal" ? "contrib" : "personal")
+              }
+              align="center"
+              justify="center"
+              border="2px solid"
+              borderColor="dracula.selection"
+              _hover={{ filter: "brightness(1.1)" }}
+              transition="0.2s"
+            >
+              {/* Fundo do lado ativo */}
+              <motion.div
+                key={view}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                style={{
+                  position: "absolute",
+                  width: "50%",
+                  height: "100%",
+                  left: view === "personal" ? 0 : "50%",
+                  background: "var(--chakra-colors-dracula-selection)",
+                  borderRadius: "inherit",
+                  zIndex: 1,
+                }}
+              />
+
+              {/* Texto + ícone animado */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={view}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.15 }}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    zIndex: 2,
+                  }}
+                >
+                  <Icon
+                    as={view === "personal" ? FaUser : FaUserFriends}
+                    boxSize={view === "personal" ? 3.5 : 5}
+                    color="dracula.fg"
+                  />
+                  <Text fontSize="sm" fontWeight="medium" color="dracula.fg">
+                    {view === "personal" ? "Personal" : "Contributor"}
+                  </Text>
+                </motion.div>
+              </AnimatePresence>
+            </HStack>
+          </HStack>
+
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>
-            {list.map((p) => (
-              <ProjectCard key={p.title} p={p} lang={lang} />
-            ))}
+            <AnimatePresence mode="popLayout">
+              {list.map((p, index) => (
+                <motion.div
+                  key={p.title + view}
+                  style={{ display: "block", width: "100%" }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    transition: {
+                      delay: index * 0.08,
+                      duration: 0.22,
+                      ease: "easeOut",
+                    },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.9,
+                    transition: { delay: index * 0.08, duration: 0.18 },
+                  }}
+                >
+                  <ProjectCard p={p} lang={lang} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </SimpleGrid>
         </VStack>
       </Container>
