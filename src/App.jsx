@@ -155,6 +155,8 @@ const I18N = {
       about: "About",
       skills: "Skills",
       projects: "Projects",
+      togglePersonal: "Personal",
+      toggleContributor: "Contributor",
       experience: "Experience",
       education: "Education",
       contact: "Contact",
@@ -191,11 +193,12 @@ const I18N = {
       },
       {
         title: "Starvation Map",
-        desc: "A visual data-driven platform to map global hunger spots, trends and raise awareness. Built using the World Bank data.",
+        desc: "A visual data-driven platform to map global hunger spots, trends and raise awareness.",
         image: "/images/worldmap.jpg",
         github: "",
         demo: "",
         tags: ["Python", "AI / ML", "Javascript", "React"],
+        hidden: true,
       },
     ],
     contributions: [
@@ -301,6 +304,8 @@ const I18N = {
       skills: "Competências",
       projects: "Projetos",
       experience: "Experiência",
+      togglePersonal: "Pessoal",
+      toggleContributor: "Contribuidor",
       education: "Educação",
       contact: "Contato",
       production: "Produção",
@@ -320,7 +325,7 @@ const I18N = {
     projects: [
       {
         title: "iSendit",
-        desc: "Sistema de criação de scripts para empresas de cibersegurança, automatizando a criação de regras e objetos de firewall.",
+        desc: "Sistema de automação para empresas de cibersegurança, gerando scripts e regras de firewall de forma inteligente.",
         image: "/images/isendit.png",
         github: "https://github.com/v1ctorsales/iSendit",
         demo: "https://isendit.com.br",
@@ -328,21 +333,41 @@ const I18N = {
       },
       {
         title: "myterminal",
-        desc: "Terminal com utilitários para baixar músicas e vídeos, encurtar URLs, criar QR codes e muito mais.",
+        desc: "Terminal com utilitários para baixar vídeos/músicas, encurtar links, gerar QR Codes e muito mais.",
         image: "/images/terminal.png",
         github: "https://github.com/v1ctorsales/Terminal",
         demo: "https://app.victorsales.com.br",
         tags: ["JavaScript", "Node", "APIs"],
       },
       {
+        title: "Starvation Map",
+        desc: "Plataforma visual baseada em dados para mapear focos de fome ao redor do mundo e gerar consciência global.",
+        image: "/images/worldmap.jpg",
+        github: "",
+        demo: "",
+        tags: ["Python", "IA / ML", "Javascript", "React"],
+      },
+    ],
+    contributions: [
+      {
         title: "Hydra Launcher",
-        desc: "Launcher de jogos para baixar, jogar, acompanhar estatísticas e gerenciar seus jogos em um só lugar.",
+        desc: "Launcher de jogos que permite baixar, gerenciar e acompanhar estatísticas da sua biblioteca.",
         image: "/images/Hydra.avif",
         github: "https://github.com/hydralauncher/hydra",
         demo: "https://hydralauncher.gg",
         tags: ["TypeScript", "React", "Python"],
       },
+      {
+        title: "Stremio Web",
+        desc: "Plataforma de streaming modular para descobrir, assistir e organizar conteúdo com extensões.",
+        image:
+          "https://raw.githubusercontent.com/Stremio/stremio-web/development/screenshots/board.png",
+        github: "https://github.com/Stremio/stremio-web",
+        demo: "https://web.stremio.com",
+        tags: ["Javascript", "Typescript", "React"],
+      },
     ],
+
     experience: [
       {
         title: "Engenheiro de Software — TAGNA Tecnologia",
@@ -877,6 +902,7 @@ function ProjectCard({ p, lang = "en" }) {
       overflow="hidden"
       display="flex"
       flexDirection="column"
+      h={"30rem"}
       style={{
         transformStyle: "preserve-3d",
         transition: "transform 0.1s ease",
@@ -964,7 +990,9 @@ function Projects({ lang = "en" }) {
 
   const personalProjects = I18N[lang].projects;
   const contributedProjects = I18N[lang].contributions || [];
-  const list = view === "personal" ? personalProjects : contributedProjects;
+  const list = (
+    view === "personal" ? personalProjects : contributedProjects
+  ).filter((p) => !p.hidden);
 
   return (
     <Box id={sections.projects} bg="dracula.bg">
@@ -984,7 +1012,7 @@ function Projects({ lang = "en" }) {
               cursor="pointer"
               overflow="hidden"
               onClick={() =>
-                setView(view === "personal" ? "contrib" : "personal")
+                setView(view === "personal" ? "contributor" : "personal")
               }
               align="center"
               justify="center"
@@ -1023,6 +1051,9 @@ function Projects({ lang = "en" }) {
                     display: "flex",
                     alignItems: "center",
                     gap: "6px",
+                    position: "absolute", // Agora apenas o texto fica posicionado, mas centralizado naturalmente
+                    inset: 0,
+                    justifyContent: "center",
                     zIndex: 2,
                   }}
                 >
@@ -1032,7 +1063,9 @@ function Projects({ lang = "en" }) {
                     color="dracula.fg"
                   />
                   <Text fontSize="sm" fontWeight="medium" color="dracula.fg">
-                    {view === "personal" ? "Personal" : "Contributor"}
+                    {view === "personal"
+                      ? t(lang, "sections.togglePersonal")
+                      : t(lang, "sections.toggleContributor")}
                   </Text>
                 </motion.div>
               </AnimatePresence>
