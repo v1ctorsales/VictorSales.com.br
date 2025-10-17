@@ -346,6 +346,7 @@ const I18N = {
         github: "",
         demo: "",
         tags: ["Python", "IA / ML", "Javascript", "React"],
+        hidden: true,
       },
     ],
     contributions: [
