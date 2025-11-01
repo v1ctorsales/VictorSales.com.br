@@ -20,6 +20,7 @@ import {
   FaExternalLinkAlt,
   FaEnvelope,
   FaCopy,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import React from "react";
 import { FiPlus } from "react-icons/fi";
@@ -580,42 +581,59 @@ function Hero({ lang = "en" }) {
               {t(lang, "hero.blurb_2")}
             </Text>
 
-            {/* Botões e links sociais */}
-            <HStack spacing={4} mt={5}>
-              <Button
-                as="a"
-                href="/images/Victor Sales (ENG).pdf"
-                download
-                bg="dracula.fg"
-                color="dracula.bg"
-                rounded="2xl"
-                px={6}
-                py={6}
-                _hover={{ filter: "brightness(1.1)" }}
-                rightIcon={<FaArrowRight />}
-              >
-                {t(lang, "hero.btn")}
-              </Button>
-
-              <HStack spacing={3}>
-                <Link
-                  href="https://github.com/v1ctorsales"
-                  isExternal
-                  color="dracula.fg"
-                  _hover={{ color: "dracula.cyan" }}
-                >
-                  <Icon as={FaGithub} boxSize={6} />
-                </Link>
-                <Link
-                  href="https://linkedin.com/in/v1ctorsales"
-                  isExternal
-                  color="dracula.fg"
-                  _hover={{ color: "dracula.cyan" }}
-                >
-                  <Icon as={FaLinkedin} boxSize={6} />
-                </Link>
+            {/* Localização + Links + Botão */}
+            <Flex
+              direction={{ base: "column", md: "row" }}
+              align="center"
+              justify="space-between" // espalha os dois blocos
+              w="100%"
+              mt={5}
+              gap={{ base: 4, md: 0 }}
+            >
+              {/* Localização */}
+              <HStack spacing={2} color="dracula.line" alignItems="baseline">
+                <Icon as={FaMapMarkerAlt} boxSize={4} color="dracula.line" />
+                <Text fontSize="lg">Tallinn, Estonia</Text>
               </HStack>
-            </HStack>
+
+              {/* Ícones + Botão */}
+              <HStack spacing={4}>
+                <HStack spacing={3}>
+                  <Link
+                    href="https://github.com/v1ctorsales"
+                    isExternal
+                    color="dracula.fg"
+                    _hover={{ color: "dracula.cyan" }}
+                  >
+                    <Icon as={FaGithub} boxSize={6} />
+                  </Link>
+                  <Link
+                    href="https://linkedin.com/in/v1ctorsales"
+                    isExternal
+                    color="dracula.fg"
+                    _hover={{ color: "dracula.cyan" }}
+                  >
+                    <Icon as={FaLinkedin} boxSize={6} />
+                  </Link>
+                </HStack>
+
+                <Button
+                  as="a"
+                  href="/images/Victor Sales (ENG).pdf"
+                  download
+                  bg="dracula.fg"
+                  color="dracula.bg"
+                  rounded="2xl"
+                  fontSize={"md"}
+                  px={6}
+                  py={6}
+                  _hover={{ filter: "brightness(1.1)" }}
+                  rightIcon={<FaArrowRight />}
+                >
+                  {t(lang, "hero.btn")}
+                </Button>
+              </HStack>
+            </Flex>
           </VStack>
         </Flex>
       </Container>
