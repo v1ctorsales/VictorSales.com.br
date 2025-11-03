@@ -8,7 +8,7 @@ export const system = createSystem(defaultConfig, {
         "dracula.bg": { value: "#282A36" }, // page background
         "dracula.panel": { value: "#1f2230" }, // darker than bg -> cards
         "dracula.selection": { value: "#44475A" }, // line/hover
-        "dracula.line": { value: "#707fafff" }, // muted text / borders
+        "dracula.line": { value: "#9ea7c6" }, // muted text / borders
         "dracula.cyan": { value: "#8BE9FD" }, // accents/links
         "dracula.fg": { value: "#F8F8F2" }, // main text
         "dracula.pink": { value: "#FF79C6" },

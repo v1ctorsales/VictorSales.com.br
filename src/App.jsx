@@ -152,6 +152,14 @@ const I18N = {
       blurb_2: "I integrate AI into modern software engineering workflows.",
       typing: ["Software Engineer", "Machine Learning Engineer"],
     },
+    about: {
+      languages: [
+        "Portuguese (C2)",
+        "English (C2)",
+        "Spanish (B1)",
+        "French (A2)",
+      ],
+    },
     sections: {
       about: "About",
       skills: "Skills",
@@ -163,7 +171,7 @@ const I18N = {
       contact: "Contact",
       production: "Production",
       github: "GitHub",
-      copyright: "© 2025 Victor Sales",
+      copyright: "2025 - Victor Sales",
     },
     skills: [
       "Java",
@@ -300,6 +308,14 @@ const I18N = {
       blurb_2: "Integro IA a fluxos modernos de engenharia de software.",
       typing: ["Engenheiro de Software", "Engenheiro de Machine Learning"],
     },
+    about: {
+      languages: [
+        "Português (C2)",
+        "Inglês (C2)",
+        "Espanhol (B1)",
+        "Francês (A2)",
+      ],
+    },
     sections: {
       about: "Sobre",
       skills: "Competências",
@@ -311,7 +327,7 @@ const I18N = {
       contact: "Contato",
       production: "Produção",
       github: "GitHub",
-      copyright: "© 2025 Victor Sales",
+      copyright: "2025 - Victor Sales",
     },
     skills: [
       "Java",
@@ -534,7 +550,7 @@ const cardProps = {
 ========================= */
 function Hero({ lang = "en" }) {
   return (
-    <Box id={sections.home} bg="dracula.bg">
+    <Box id={sections.home} mt={"5%"} mb={"2.5%"}>
       <Container maxW="container" px={4} py={{ base: 16, md: 24 }}>
         <Flex
           direction={{ base: "column", md: "row" }}
@@ -602,6 +618,7 @@ function Hero({ lang = "en" }) {
                   <Link
                     href="https://github.com/v1ctorsales"
                     isExternal
+                    target="_blank"
                     color="dracula.fg"
                     _hover={{ color: "dracula.cyan" }}
                   >
@@ -609,6 +626,7 @@ function Hero({ lang = "en" }) {
                   </Link>
                   <Link
                     href="https://linkedin.com/in/v1ctorsales"
+                    target="_blank"
                     isExternal
                     color="dracula.fg"
                     _hover={{ color: "dracula.cyan" }}
@@ -642,16 +660,120 @@ function Hero({ lang = "en" }) {
 }
 
 function About({ lang = "en" }) {
+  const languages = t(lang, "about.languages").map((name) => ({ name }));
+
+  const speakTexts = ["Eu falo", "I speak", "Yo hablo", "Je parle"];
+  const [index, setIndex] = React.useState(0);
+
+  // alterna o texto a cada 3s
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % speakTexts.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // detecta visibilidade do bloco
+  const ref = React.useRef(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <Box id={sections.about} bg="dracula.bg">
+    <Box id={sections.about}>
       <Container maxW="container" px={4} py={20}>
         <VStack spacing={6} align="start">
           <Heading color="dracula.fg">{t(lang, "sections.about")}</Heading>
+
           <Text color="dracula.line">
             {lang === "en"
               ? "I have over 3 years of experience in programming, mainly as a backend developer. I have worked with Java, Typescript, Python, Databases and much more. I'm currently pursuing my Masters in Artificial Intelligence for Sustainable Societies in Tallinn, Estonia."
               : "Tenho mais de 3 anos de experiência em programação, principalmente como desenvolvedor backend. Já trabalhei com Java, Typescript, Python, bancos de dados e muito mais. Atualmente mestrando em Inteligência Artificial para Sociedades Sustentáveis em Tallinn, Estônia."}
           </Text>
+
+          {/* Texto animado + linguagens */}
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <HStack
+              spacing={4}
+              color="dracula.line"
+              mt="2rem"
+              flexWrap="wrap"
+              align="center"
+            >
+              {/* Texto animado */}
+              <Box
+                color="dracula.line"
+                fontWeight="normal"
+                fontSize="lg"
+                minW="6rem"
+                textAlign="left"
+              >
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.4 }}
+                    style={{ display: "inline-block", width: "100%" }}
+                  >
+                    {speakTexts[index]}
+                  </motion.span>
+                </AnimatePresence>
+              </Box>
+
+              {/* Lista de idiomas */}
+              {languages.map((langItem, idx) => {
+                const isActive = idx === index;
+
+                return (
+                  <motion.span
+                    key={idx}
+                    style={{ display: "inline-block" }}
+                    animate={{
+                      textShadow: isActive
+                        ? [
+                            "0 0 0px rgba(255,255,255,0)", // start
+                            "0 0 2px rgba(255,255,255,0.1)",
+                            "0 0 4px rgba(255,255,255,0.4)", // peak
+                            "0 0 2px rgba(255,255,255,0.4)",
+                            "0 0 0px rgba(255,255,255,0.1)", // end
+                          ]
+                        : "0 0 0px rgba(255,255,255,0)",
+                    }}
+                    transition={{
+                      duration: 3, // mais lento e suave
+                      ease: "easeInOut",
+                      times: [0, 0.15, 0.3, 0.8, 1],
+                    }}
+                  >
+                    <Text color="dracula.line" display="inline">
+                      {langItem.name}
+                    </Text>
+                    {idx < languages.length - 1 && (
+                      <Text as="span" mx={2.5} color="dracula.selection">
+                        •
+                      </Text>
+                    )}
+                  </motion.span>
+                );
+              })}
+            </HStack>
+          </motion.div>
         </VStack>
       </Container>
     </Box>
@@ -662,12 +784,19 @@ function Experience({ lang = "en" }) {
   const items = I18N[lang].experience;
 
   return (
-    <Box id={sections.experience} bg="dracula.bg">
-      <Container maxW="container" px={4} py={20}>
-        <VStack spacing={6} align="start" w="full">
+    <Box id={sections.experience} h="100%">
+      <Container maxW="container" px={4} py={20} h="full">
+        <VStack spacing={0} align="start" w="full" h="full">
           <Heading color="dracula.fg">{t(lang, "sections.experience")}</Heading>
 
-          <VStack spacing={2} w="full">
+          {/* VStack com gap forçado = 0 */}
+          <VStack
+            w="full"
+            h="full"
+            align="stretch"
+            spacing={0}
+            style={{ gap: 0 }}
+          >
             {items.map((it) => (
               <ExpandableBullet
                 key={it.title}
@@ -679,6 +808,7 @@ function Experience({ lang = "en" }) {
                     <Text>{it.desc}</Text>
                   </VStack>
                 }
+                flex="1" // preenche igualmente o espaço vertical
               />
             ))}
           </VStack>
@@ -688,8 +818,7 @@ function Experience({ lang = "en" }) {
   );
 }
 
-/* Expandable (retrocompat: title OR titleClosed/titleOpen) */
-function ExpandableBullet({ title, titleClosed, titleOpen, details }) {
+function ExpandableBullet({ title, titleClosed, titleOpen, details, flex }) {
   const [open, setOpen] = React.useState(false);
 
   const closed = titleClosed ?? title ?? "";
@@ -703,26 +832,36 @@ function ExpandableBullet({ title, titleClosed, titleOpen, details }) {
   const MotionIcon = motion(Icon);
 
   return (
-    <Box w="full">
-      {/* Linha clicável */}
+    <Box w="full" flex={flex} display="flex" flexDirection="column">
+      {/* Linha clicável ocupa todo o espaço */}
       <MotionHStack
         as="button"
         type="button"
         onClick={() => setOpen((v) => !v)}
         w="full"
+        h="full"
+        px={4} // padding horizontal
+        py={2} // padding vertical
         spacing={3}
         align="center"
         cursor="pointer"
         color="dracula.fg"
-        _hover={{ color: "dracula.cyan" }}
         layout
         transition={{ type: "spring", stiffness: 420, damping: 30, mass: 0.6 }}
+        whileHover={{ scale: 1.02, y: -2 }}
       >
         {/* bullet visual */}
-        <Box w="8px" h="8px" rounded="full" bg="dracula.fg" opacity={0.9} />
+        <MotionBox
+          w="8px"
+          h="8px"
+          rounded="full"
+          bg="dracula.fg"
+          opacity={0.9}
+          whileHover={{ scale: 1.4 }}
+        />
 
-        {/* Título com animação de troca (cresce/encolhe) */}
-        <HStack spacing={2}>
+        {/* Título com animação de troca */}
+        <HStack spacing={2} flex="1">
           <AnimatePresence mode="wait" initial={false}>
             <MotionText
               key={displayKey}
@@ -745,7 +884,7 @@ function ExpandableBullet({ title, titleClosed, titleOpen, details }) {
         </HStack>
       </MotionHStack>
 
-      {/* Conteúdo colapsável com animate height + fade */}
+      {/* Conteúdo colapsável */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <MotionBox
@@ -756,6 +895,9 @@ function ExpandableBullet({ title, titleClosed, titleOpen, details }) {
             transition={{ duration: 0.24, ease: [0.25, 0.1, 0.25, 1] }}
             overflow="hidden"
             ml={7}
+            // Faz o conteúdo inteiro ser clicável para fechar
+            onClick={() => setOpen(false)}
+            cursor="pointer"
           >
             <Box
               borderLeft="2px solid"
@@ -764,7 +906,6 @@ function ExpandableBullet({ title, titleClosed, titleOpen, details }) {
               py={2}
               color="dracula.fg"
             >
-              {/* também dá um pequeno fade/slide no bloco interno */}
               <MotionBox
                 initial={{ y: -4, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -800,23 +941,30 @@ function Education({ lang = "en" }) {
   const items = I18N[lang].education;
 
   return (
-    <Box id="education" bg="dracula.bg">
-      <Container maxW="container" px={4} py={20}>
-        <VStack spacing={6} align="start" w="full">
+    <Box id="education" h="100%">
+      <Container maxW="container" px={4} py={20} h="full">
+        <VStack spacing={0} align="start" w="full" h="full">
           <Heading color="dracula.fg">{t(lang, "sections.education")}</Heading>
-          <VStack spacing={2} w="full">
+
+          <VStack
+            w="full"
+            h="full"
+            align="stretch"
+            spacing={0}
+            style={{ gap: 0 }}
+          >
             {items.map((it) => (
               <ExpandableBullet
                 key={it.titleClosed}
                 titleClosed={it.titleClosed}
                 titleOpen={it.titleOpen}
+                flex="1"
                 details={
                   <VStack align="start" spacing={1.5}>
                     <Text color="dracula.line">{it.period}</Text>
                     <Text>{it.location}</Text>
 
                     {it.notes.map((note, idx) => {
-                      // remove emojis e espaços extras antes de comparar
                       const cleaned = note.replace(/^[^\w]+/, "").trim();
                       const file = noteLinks[cleaned];
 
@@ -861,7 +1009,7 @@ function Skills({ lang = "en" }) {
   };
 
   return (
-    <Box id={sections.skills} bg="dracula.bg">
+    <Box id={sections.skills}>
       <Container maxW="container" px={4} py={20}>
         <VStack spacing={8} align="start">
           <Heading color="dracula.fg">{t(lang, "sections.skills")}</Heading>
@@ -1014,7 +1162,7 @@ function Projects({ lang = "en" }) {
   ).filter((p) => !p.hidden);
 
   return (
-    <Box id={sections.projects} bg="dracula.bg">
+    <Box id={sections.projects}>
       <Container maxW="container" px={4} py={20}>
         <VStack spacing={8} align="start">
           {/* Heading + Toggle */}
@@ -1137,7 +1285,7 @@ function Contact({ lang = "en" }) {
   };
 
   return (
-    <Box id={sections.contact} bg="dracula.bg">
+    <Box id={sections.contact}>
       <Container maxW="container" px={4} pt={20} pb={2}>
         <VStack spacing={6} align="start">
           <Heading color="dracula.fg">{t(lang, "sections.contact")}</Heading>
@@ -1236,16 +1384,50 @@ export default function App() {
   const [lang, setLang] = React.useState("en");
 
   return (
-    <Box bg="dracula.bg" color="dracula.fg" minH="100vh">
-      <TinyLangToggle value={lang} onChange={setLang} />
-      {/* <Navbar />  // removido */}
-      <Hero lang={lang} />
-      <About lang={lang} />
-      <Skills lang={lang} />
-      <Projects lang={lang} />
-      <Experience lang={lang} />
-      <Education lang={lang} />
-      <Contact lang={lang} />
+    // container raiz
+    <Box position="relative" minH="100vh" overflow="hidden">
+      {/* Fundo sólido do tema */}
+      <Box position="absolute" inset={0} bg="dracula.bg" zIndex={0} />
+
+      {/* Camada do grid por cima do fundo */}
+      <Box
+        position="absolute"
+        inset={0}
+        zIndex={1}
+        pointerEvents="none"
+        backgroundImage={`
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)
+  `}
+        backgroundSize="40px 40px, 40px 40px"
+        backgroundAttachment="fixed"
+        // efeito de fade do centro
+        style={{
+          WebkitMaskImage:
+            "radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%)",
+          WebkitMaskRepeat: "no-repeat",
+          WebkitMaskPosition: "center",
+          WebkitMaskSize: "cover",
+          maskImage:
+            "radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%)",
+          maskRepeat: "no-repeat",
+          maskPosition: "center",
+          maskSize: "cover",
+        }}
+      />
+
+      {/* Conteúdo do site */}
+      <Box position="relative" zIndex={2} color="dracula.fg">
+        <TinyLangToggle value={lang} onChange={setLang} />
+        {/* <Navbar /> */}
+        <Hero lang={lang} />
+        <About lang={lang} />
+        <Skills lang={lang} />
+        <Projects lang={lang} />
+        <Experience lang={lang} />
+        <Education lang={lang} />
+        <Contact lang={lang} />
+      </Box>
     </Box>
   );
 }
