@@ -765,9 +765,7 @@ function About({ lang = "en" }) {
                       {langItem.name}
                     </Text>
                     {idx < languages.length - 1 && (
-                      <Text as="span" mx={2.5} color="dracula.selection">
-                        •
-                      </Text>
+                      <Text as="span" mx={2.5} color="dracula.selection"></Text>
                     )}
                   </motion.span>
                 );
