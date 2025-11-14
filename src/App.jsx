@@ -204,10 +204,10 @@ const I18N = {
         title: "Starvation Map",
         desc: "A visual data-driven platform to map global hunger spots, trends and raise awareness.",
         image: "/images/worldmap.jpg",
-        github: "",
-        demo: "",
-        tags: ["Python", "AI / ML", "Javascript", "React"],
-        hidden: true,
+        github: "https://github.com/v1ctorsales/data-science-project",
+        demo: "https://food-insecurity-map.vercel.app",
+        tags: ["Python", "Javascript", "React", "Google Cloud", "Docker"],
+        hidden: false,
       },
     ],
     contributions: [
@@ -360,10 +360,11 @@ const I18N = {
         title: "Starvation Map",
         desc: "Plataforma visual baseada em dados para mapear focos de fome ao redor do mundo e gerar consciência global.",
         image: "/images/worldmap.jpg",
-        github: "",
-        demo: "",
-        tags: ["Python", "IA / ML", "Javascript", "React"],
-        hidden: true,
+        image: "/images/worldmap.jpg",
+        github: "https://github.com/v1ctorsales/data-science-project",
+        demo: "https://food-insecurity-map.vercel.app",
+        tags: ["Python", "Javascript", "React", "Google Cloud", "Docker"],
+        hidden: false,
       },
     ],
     contributions: [
@@ -637,7 +638,7 @@ function Hero({ lang = "en" }) {
 
                 <Button
                   as="a"
-                  href="/images/Victor Sales (ENG).pdf"
+                  href="/images/Victor Sales - (ENG).pdf"
                   download
                   bg="dracula.fg"
                   color="dracula.bg"
@@ -1106,7 +1107,7 @@ function ProjectCard({ p, lang = "en" }) {
           {p.tags.map((tag) => (
             <Box
               key={tag}
-              bg="dracula.line"
+              bg="dracula.bg"
               color="dracula.fg"
               px={2.5}
               py={1}
